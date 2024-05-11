@@ -8,16 +8,24 @@ public class PlayerController : MonoBehaviour
     public GunEnums.EGunType eGunType;
     public Gun bullet;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite normalSprite;
+    public Sprite canShotSprite;
+
     private WaitForSeconds shotCoolTime;
+    private WaitForSeconds fightCoolTime;
     private readonly float attackRate = 0.2f;
+    private readonly float fightRate = 10.0f;
 
     private bool isShot = false;
+    private bool isFight = false;
 
     public void Init(Gun bullet)
     {
         this.bullet = bullet;
         this.bullet.transform.SetParent(this.transform);
         this.bullet.transform.localPosition = Vector3.zero;
+        this.spriteRenderer.sprite = this.normalSprite;
     }
 
     private void Awake()
@@ -27,14 +35,12 @@ public class PlayerController : MonoBehaviour
         gameMain.Init(this.eGunType);
 
         shotCoolTime = new WaitForSeconds(attackRate);
+        fightCoolTime = new WaitForSeconds(fightRate);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            ShootBullet();
-        }
+        ShootBullet();
     }
 
     private void FixedUpdate()
@@ -54,11 +60,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ShootBullet()
-    {
-        if (!isShot)
+     {
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            this.bullet.Shoot();
-            StartCoroutine(Co_ShotCoolTime());
+            if (!isShot && isFight)
+            {
+                this.bullet.Shoot();
+                StartCoroutine(Co_ShotCoolTime());
+            }
         }
     }
 
@@ -67,5 +76,26 @@ public class PlayerController : MonoBehaviour
         isShot = true;
         yield return shotCoolTime;
         isShot = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("FightSign"))
+        {
+            if (Input.GetKeyDown(KeyCode.Z) && !isFight)
+            {
+                StartCoroutine(Co_FightCoolTime());
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
+    private IEnumerator Co_FightCoolTime()
+    {
+        spriteRenderer.sprite = canShotSprite;
+        isFight = true;
+        yield return fightCoolTime;
+        isFight = false;
+        spriteRenderer.sprite = normalSprite;
     }
 }

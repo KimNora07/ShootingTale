@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 355191515}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eGunType: 0
   bullet: {fileID: 0}
+  spriteRenderer: {fileID: 355191519}
+  normalSprite: {fileID: 21300000, guid: d48ac77c1d695764d8f306b675e8eb3b, type: 3}
+  canShotSprite: {fileID: 21300000, guid: 8ad3ba00f6447cd4c8fcc2ba8644ec3b, type: 3}
 --- !u!58 &355191517
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -982,6 +985,63 @@ Transform:
   - {fileID: 674888161}
   m_Father: {fileID: 476776157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1768655780
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202942840207900993, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 455788251406368010, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+      propertyPath: m_Name
+      value: FightSign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a899903d3767a9a47afb2189b3725022, type: 3}
 --- !u!1 &1901547383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,3 +1390,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 178587116}
   - {fileID: 476776157}
+  - {fileID: 1768655780}
