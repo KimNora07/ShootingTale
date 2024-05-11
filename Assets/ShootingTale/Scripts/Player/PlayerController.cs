@@ -7,19 +7,26 @@ public class PlayerController : MonoBehaviour
     private Movement2D movement2D;
     public GunEnums.EGunType eGunType;
     public Gun bullet;
-    
+
+    private WaitForSeconds shotCoolTime;
+    private readonly float attackRate = 0.2f;
+
+    private bool isShot = false;
+
     public void Init(Gun bullet)
     {
         this.bullet = bullet;
         this.bullet.transform.SetParent(this.transform);
         this.bullet.transform.localPosition = Vector3.zero;
     }
-    
+
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
         GameMain gameMain = GameObject.FindObjectOfType<GameMain>();
         gameMain.Init(this.eGunType);
+
+        shotCoolTime = new WaitForSeconds(attackRate);
     }
 
     private void Update()
@@ -47,7 +54,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ShootBullet()
-    { 
-        this.bullet.Shoot();
+    {
+        if (!isShot)
+        {
+            this.bullet.Shoot();
+            StartCoroutine(Co_ShotCoolTime());
+        }
+    }
+
+    private IEnumerator Co_ShotCoolTime()
+    {
+        isShot = true;
+        yield return shotCoolTime;
+        isShot = false;
     }
 }
