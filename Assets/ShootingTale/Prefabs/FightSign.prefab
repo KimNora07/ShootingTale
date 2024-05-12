@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 55633671494347960}
   - component: {fileID: 1141356742452819546}
   - component: {fileID: -5197235006189622993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FightSign
   m_TagString: FightSign
   m_Icon: {fileID: 0}

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player ")]
     private Movement2D movement2D;
     public GunEnums.EGunType eGunType;
     public Gun bullet;
+    public SpawnSign spawnSign;
 
     public SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
@@ -18,7 +20,12 @@ public class PlayerController : MonoBehaviour
     private readonly float fightRate = 10.0f;
 
     private bool isShot = false;
-    private bool isFight = false;
+    [HideInInspector] public bool isFight = false;
+
+    public LayerMask hitSign;
+
+    private float mysize = 0.16f;
+    public float maxDistance = 1.09f;
 
     public void Init(Gun bullet)
     {
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ShootBullet();
+        HitSign();
     }
 
     private void FixedUpdate()
@@ -56,7 +64,7 @@ public class PlayerController : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
 
-        movement2D.MoveTo(new Vector3(xInput, yInput, 0));  
+        movement2D.MoveTo(new Vector3(xInput, yInput, 0)); 
     }
 
     private void ShootBullet()
@@ -78,18 +86,6 @@ public class PlayerController : MonoBehaviour
         isShot = false;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("FightSign"))
-        {
-            if (Input.GetKeyDown(KeyCode.Z) && !isFight)
-            {
-                StartCoroutine(Co_FightCoolTime());
-                Destroy(collision.gameObject);
-            }
-        }
-    }
-
     private IEnumerator Co_FightCoolTime()
     {
         spriteRenderer.sprite = canShotSprite;
@@ -97,5 +93,28 @@ public class PlayerController : MonoBehaviour
         yield return fightCoolTime;
         isFight = false;
         spriteRenderer.sprite = normalSprite;
+        spawnSign.isSummon = false;
+        spawnSign.SummonSign();
+    }
+
+    private void HitSign()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, mysize, Vector2.up, maxDistance, hitSign);
+        if(hit.collider != null)
+        {
+            if (Input.GetKeyDown(KeyCode.Z) && !isFight)
+            {
+                if (hit.collider.CompareTag("FightSign"))
+                {
+                    StartCoroutine(Co_FightCoolTime());
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, maxDistance);
     }
 }
