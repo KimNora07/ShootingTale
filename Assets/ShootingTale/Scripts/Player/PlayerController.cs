@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player ")]
+    // Player Movement
     private Movement2D movement2D;
+
+    [Header("Player Gun")]
     public GunEnums.EGunType eGunType;
     public Gun bullet;
-    public SpawnSign spawnSign;
-
-    public SpriteRenderer spriteRenderer;
-    public Sprite normalSprite;
-    public Sprite canShotSprite;
 
     private WaitForSeconds shotCoolTime;
     private WaitForSeconds fightCoolTime;
@@ -22,7 +19,15 @@ public class PlayerController : MonoBehaviour
     private bool isShot = false;
     [HideInInspector] public bool isFight = false;
 
+    [Header("Player Hit")]
+    public SpriteRenderer spriteRenderer;
+    public Sprite normalSprite;
+    public Sprite canShotSprite;
+
     public LayerMask hitSign;
+
+    public SpawnSign spawnSign;
+    public Animator animator;
 
     private float mysize = 0.16f;
     public float maxDistance = 1.09f;
@@ -35,14 +40,20 @@ public class PlayerController : MonoBehaviour
         this.spriteRenderer.sprite = this.normalSprite;
     }
 
-    private void Awake()
+    public void Init()
     {
         movement2D = GetComponent<Movement2D>();
-        GameMain gameMain = GameObject.FindObjectOfType<GameMain>();
-        gameMain.Init(this.eGunType);
 
         shotCoolTime = new WaitForSeconds(attackRate);
         fightCoolTime = new WaitForSeconds(fightRate);
+    }
+
+    private void Awake()
+    {
+        GameMain gameMain = GameObject.FindObjectOfType<GameMain>();
+        gameMain.Init(this.eGunType);
+
+        this.Init();
     }
 
     private void Update()
@@ -56,8 +67,9 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
+    #region Move
     /// <summary>
-    /// 플레이어 움직임
+    /// 플레이어가 움직이게 해주는 메소드
     /// </summary>
     private void Move()
     {
@@ -66,7 +78,12 @@ public class PlayerController : MonoBehaviour
 
         movement2D.MoveTo(new Vector3(xInput, yInput, 0)); 
     }
+    #endregion
 
+    #region Shot
+    /// <summary>
+    /// 플레이어가 총을 발사하게 해주는 메소드
+    /// </summary>
     private void ShootBullet()
      {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -85,18 +102,12 @@ public class PlayerController : MonoBehaviour
         yield return shotCoolTime;
         isShot = false;
     }
+    #endregion
 
-    private IEnumerator Co_FightCoolTime()
-    {
-        spriteRenderer.sprite = canShotSprite;
-        isFight = true;
-        yield return fightCoolTime;
-        isFight = false;
-        spriteRenderer.sprite = normalSprite;
-        spawnSign.isSummon = false;
-        spawnSign.SummonSign();
-    }
-
+    #region Fight
+    /// <summary>
+    /// Sign에 닿았음을 감지하는 메소드
+    /// </summary>
     private void HitSign()
     {
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, mysize, Vector2.up, maxDistance, hitSign);
@@ -113,8 +124,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private IEnumerator Co_FightCoolTime()
     {
-        Gizmos.DrawSphere(transform.position, maxDistance);
+        animator.SetBool("isFight", true);
+        spriteRenderer.sprite = canShotSprite;
+        isFight = true;
+        yield return fightCoolTime;
+        isFight = false;
+        spriteRenderer.sprite = normalSprite;
+        animator.SetBool("isFight", false);
+        spawnSign.isSummon = false;
+        spawnSign.SummonSign();
     }
+
+    #endregion
+
+    /// <summary>
+    /// 플레이어 Raycast 범위 확인용 OnDrawGizmos
+    /// </summary>
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawSphere(transform.position, maxDistance);
+    //}
 }

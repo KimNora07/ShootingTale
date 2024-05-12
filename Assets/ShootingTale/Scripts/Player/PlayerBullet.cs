@@ -8,13 +8,14 @@ public class PlayerBullet : MonoBehaviour
 
     private void Update()
     {
-        Vector3 next = new Vector3(1 * shootSpeed * Time.deltaTime, 0, 0);
+        Vector3 next = new Vector3(0, 1 * shootSpeed * Time.deltaTime, 0);
         this.transform.position += next;
 
         // 카메라를 벗어 났을 때 제거
-        if(this.transform.position.x >= 14.7f)
+        if(this.transform.position.y >= 10.5f)
         {
-            Destroy(this.gameObject);
+            ObjectPool.instance.ResetForPool(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 

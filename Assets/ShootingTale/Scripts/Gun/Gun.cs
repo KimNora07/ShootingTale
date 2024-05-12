@@ -11,9 +11,11 @@ public class Gun : MonoBehaviour
 
     public virtual void Shoot()
     {
-        GameObject go = Instantiate(this.bulletPrefab);
+        //GameObject go = Instantiate(this.bulletPrefab);
+
+        GameObject go = ObjectPool.instance.GetObject();
         go.transform.position = this.bulletPoint.position;
     }
 
-    
+
 }
