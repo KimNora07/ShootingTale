@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuMain : MonoBehaviour
 {
+    public TMP_Text buttonText;
     public RectTransform button;
+
+    public RectTransform startPoint;
+    public RectTransform settingPoint;
+    public RectTransform exitPoint;
 
     public List<RectTransform> points;
 
@@ -16,6 +21,11 @@ public class MenuMain : MonoBehaviour
     public bool isRight = false;
 
     private void Update()
+    {
+        Select();
+    }
+
+    private void Select()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -33,30 +43,39 @@ public class MenuMain : MonoBehaviour
             }
         }
 
-        if(isLeft)
+        if (isLeft)
         {
             //button.position = Vector3.Lerp(button.position, points[position - 1].position, 0.025f);
-            button.position = Vector3.MoveTowards(button.position, points[position - 1].position,0.25f);
+            button.position = Vector3.MoveTowards(button.position, points[position - 1].position, 0.25f);
             if (button.position == points[position - 1].position)
             {
-                Debug.Log(position);
                 isLeft = false;
                 position--;
-                Debug.Log(position);
             }
         }
 
-        if (isRight) 
+        if (isRight)
         {
             //button.position = Vector3.Lerp(button.position, points[position + 1].position, 0.025f);
             button.position = Vector3.MoveTowards(button.position, points[position + 1].position, 0.25f);
             if (button.position == points[position + 1].position)
-            {    
-                Debug.Log(position);
+            {
                 isRight = false;
                 position++;
-                Debug.Log(position);
             }
+        }
+
+        if (startPoint.position == button.position)
+        {
+            buttonText.text = "시작";
+        }
+        else if (settingPoint.position == button.position)
+        {
+            buttonText.text = "설정";
+        }
+        else if (exitPoint.position == button.position)
+        {
+            buttonText.text = "나가";
         }
     }
 }
