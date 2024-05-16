@@ -27,10 +27,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask hitSign;
 
     public SpawnSign spawnSign;
-    public Animator animator;
+    public Animator changeAnimator;
+    public Animator waveAnimator;
 
     private float mysize = 0.16f;
     public float maxDistance = 1.09f;
+
+    private int horizontalMultiKey = 0;       // 현재 좌우 방향키 중 몇개의 키가 눌렸는지
+    private int verticalMultiKey = 0;       // 현재 상하 방향키 중 몇개의 키가 눌렸는지
+    private float horizontalFirstDir = 0f;    // 좌우 방향키 중 먼저 눌린 키 방향
+    private float verticalFirstDir = 0f;    // 상하 방향키 중 먼저 눌린 키 방향
 
     public void Init(Gun bullet)
     {
@@ -60,10 +66,6 @@ public class PlayerController : MonoBehaviour
     {
         ShootBullet();
         HitSign();
-    }
-
-    private void FixedUpdate()
-    {
         Move();
     }
 
@@ -73,10 +75,163 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        float xInput = Input.GetAxisRaw("Horizontal");
-        float yInput = Input.GetAxisRaw("Vertical");
+        var xInput = GetHorizontalAxisRaw(KeyCode.LeftArrow, KeyCode.RightArrow);
+        var yInput = GetVerticalAxisRaw(KeyCode.DownArrow, KeyCode.UpArrow);
+
+        Debug.Log("Horizontal: " + xInput);
+        Debug.Log("Vertical: " + yInput);
 
         movement2D.MoveTo(new Vector3(xInput, yInput, 0)); 
+    }
+
+    /// <summary>
+    /// 새로운 GetHorizontalAxisRaw
+    /// </summary>
+    /// <param name="k1">왼쪽키</param>
+    /// <param name="k2">오른쪽키</param>
+    /// <returns></returns>
+    private float GetHorizontalAxisRaw(KeyCode k1, KeyCode k2)
+    {
+        var returnDir = 0f;
+
+        if (Time.timeScale == 0f) return returnDir;
+
+        if (Input.GetKey(k1))
+        {
+            // 방향을 왼쪽으로 처리 or 방향을 아래쪽으로 처리
+            returnDir = -1f;
+
+            // 키를 눌렀음을 체크
+            if (Input.GetKeyDown(k1))
+            {
+                horizontalMultiKey++;
+            }
+
+            // 좌우 방향키 중 먼저 눌린 키를 처리 or 위아래 방향키 중 먼저 눌린 키를 처리
+            if(horizontalMultiKey == 1)
+            {
+                horizontalFirstDir = -1;
+            }
+           
+        }
+
+        if (Input.GetKey(k2))
+        {
+            // 방향을 오른쪽으로 처리 or 방향을 위쪽으로 처리
+            returnDir = 1f;
+
+            // 키를 눌렀음을 체크
+            if (Input.GetKeyDown(k2))
+            {
+                horizontalMultiKey++;
+            }
+
+            // 좌우 방향키 중 먼저 눌린 키를 처리 or 위아래 방향키 중 먼저 눌린 키를 처리
+            if (horizontalMultiKey == 1)
+            {
+                horizontalFirstDir = 1;
+            }
+        }
+
+        // 먼저 눌린 방향의 반대 방향으로 이동
+        if(horizontalMultiKey == 2)
+        {
+            returnDir = -horizontalFirstDir;
+        }
+
+        // 키 누름 해제
+        if(Input.GetKeyUp(k1))
+        {
+            horizontalMultiKey--;
+        }
+
+        if (Input.GetKeyUp(k2))
+        {
+            horizontalMultiKey--;
+        }
+
+        // 초기화
+        if (horizontalMultiKey == 0)
+        {
+            horizontalFirstDir = 0f;
+        }
+
+        return returnDir;
+    }
+
+    /// <summary>
+    /// 새로운 GetVerticalAxisRaw
+    /// </summary>
+    /// <param name="k1">아래쪽키</param>
+    /// <param name="k2">위쪽키</param>
+    /// <returns></returns>
+    private float GetVerticalAxisRaw(KeyCode k1, KeyCode k2)
+    {
+        var returnDir = 0f;
+
+        if (Time.timeScale == 0f) return returnDir;
+
+        if (Input.GetKey(k1))
+        {
+            // 방향을 왼쪽으로 처리 or 방향을 아래쪽으로 처리
+            returnDir = -1f;
+
+            // 키를 눌렀음을 체크
+            if (Input.GetKeyDown(k1))
+            {
+                verticalMultiKey++;
+            }
+
+            // 좌우 방향키 중 먼저 눌린 키를 처리 or 위아래 방향키 중 먼저 눌린 키를 처리
+            if (verticalMultiKey == 1)
+            {
+                verticalFirstDir = -1;
+            }
+
+        }
+
+        if (Input.GetKey(k2))
+        {
+            // 방향을 오른쪽으로 처리 or 방향을 위쪽으로 처리
+            returnDir = 1f;
+
+            // 키를 눌렀음을 체크
+            if (Input.GetKeyDown(k2))
+            {
+                verticalMultiKey++;
+            }
+
+            // 좌우 방향키 중 먼저 눌린 키를 처리 or 위아래 방향키 중 먼저 눌린 키를 처리
+            if (verticalMultiKey == 1)
+            {
+                verticalFirstDir = 1;
+            }
+        }
+
+        // 먼저 눌린 방향의 반대 방향으로 이동
+        if (verticalMultiKey == 2)
+        {
+            returnDir = -verticalFirstDir;
+        }
+
+        // 키 누름 해제
+        if (Input.GetKeyUp(k1))
+        {
+            verticalMultiKey--;
+        }
+
+        if (Input.GetKeyUp(k2))
+        {
+            verticalMultiKey--;
+        }
+
+        // 초기화
+        if (verticalMultiKey == 0)
+        {
+            verticalFirstDir = 0f;
+        }
+
+        return returnDir;
     }
     #endregion
 
@@ -126,13 +281,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Co_FightCoolTime()
     {
-        animator.SetBool("isFight", true);
+        changeAnimator.SetBool("isFight", true);
         spriteRenderer.sprite = canShotSprite;
+        waveAnimator.SetBool("isFightWave", true);
+        waveAnimator.SetBool("isNormalWave", false);
         isFight = true;
         yield return fightCoolTime;
         isFight = false;
+        changeAnimator.SetBool("isFight", false);
         spriteRenderer.sprite = normalSprite;
-        animator.SetBool("isFight", false);
+        waveAnimator.SetBool("isNormalWave", true);
+        waveAnimator.SetBool("isFightWave", false);
         spawnSign.isSummon = false;
         spawnSign.SummonSign();
     }
