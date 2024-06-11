@@ -78,10 +78,13 @@ public class PlayerController : MonoBehaviour
         var xInput = GetHorizontalAxisRaw(KeyCode.LeftArrow, KeyCode.RightArrow);
         var yInput = GetVerticalAxisRaw(KeyCode.DownArrow, KeyCode.UpArrow);
 
+        var xx = Input.GetAxisRaw("Horizontal");
+        var yy = Input.GetAxisRaw("Vertical");
+
         Debug.Log("Horizontal: " + xInput);
         Debug.Log("Vertical: " + yInput);
 
-        movement2D.MoveTo(new Vector3(xInput, yInput, 0)); 
+        movement2D.MoveTo(new Vector3(xx, yy, 0)); 
     }
 
     /// <summary>
@@ -112,6 +115,8 @@ public class PlayerController : MonoBehaviour
             {
                 horizontalFirstDir = -1;
             }
+
+            Debug.Log($"{k1}, {k2}");
            
         }
 
