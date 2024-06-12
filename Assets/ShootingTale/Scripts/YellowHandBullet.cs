@@ -70,8 +70,12 @@ public class YellowHandBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerInfo>().TakeDamage(1);
-            Destroy(this.gameObject);
+            if (!collision.GetComponent<PlayerInfo>().isInvincibility)
+            {
+                collision.GetComponent<PlayerInfo>().TakeDamage(1);
+                UIManager.Instance.playerHpText.text = PlayerInfo.Instance.hp.ToString();
+                Destroy(this.gameObject);
+            }
         }
     }
 }

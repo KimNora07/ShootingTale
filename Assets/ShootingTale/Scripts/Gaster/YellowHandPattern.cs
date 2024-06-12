@@ -40,6 +40,4 @@ public class YellowHandPattern : MonoBehaviour
             yield return new WaitForSeconds(attackRate);
         }
     }
-
-    
 }
