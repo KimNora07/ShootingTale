@@ -5,6 +5,8 @@ using UnityEngine;
 public class YellowHand : MonoBehaviour
 {
     public static YellowHand instance;
+
+    public ActiveBossType bossType;
     // 탄알이 플레이어 방향으로 이동을 정해주고, 발사한다
     //탄막 오브젝트, 속도, 생성할 위치
 

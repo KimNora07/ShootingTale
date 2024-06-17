@@ -81,8 +81,8 @@ public class PlayerController : MonoBehaviour
         var xx = Input.GetAxisRaw("Horizontal");
         var yy = Input.GetAxisRaw("Vertical");
 
-        Debug.Log("Horizontal: " + xInput);
-        Debug.Log("Vertical: " + yInput);
+        //Debug.Log("Horizontal: " + xInput);
+        //Debug.Log("Vertical: " + yInput);
 
         movement2D.MoveTo(new Vector3(xx, yy, 0)); 
     }

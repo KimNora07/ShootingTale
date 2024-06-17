@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     public float shootSpeed;
+    public float bulletAtk;
 
     private void Update()
     {
@@ -22,6 +23,14 @@ public class PlayerBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 적을 타격했을 때 총알 제거
+        if (collision.gameObject.CompareTag("Heart"))
+        {
+            if(Boss.Instance.boss != null)
+            {
+                Boss.Instance.boss.GetComponent<HandInfo>().hp -= bulletAtk;
+            }
+            ObjectPool.instance.ResetForPool(this.gameObject);
+        }
     }
     
     private void Explode()

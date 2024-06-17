@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Folder
   - FightSign
+  - Heart
   layers:
   - Default
   - TransparentFX

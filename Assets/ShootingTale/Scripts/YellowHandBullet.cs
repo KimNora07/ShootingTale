@@ -19,6 +19,17 @@ public class YellowHandBullet : MonoBehaviour
 
     private void Update()
     {
+        PatternOne();
+
+        // 플레이어 시야에 보이지 않을 경우 제거
+        if (transform.position.y <= -16)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void PatternOne()
+    {
         if (target != null && !hasLookedAtTarget)
         {
             // 대상 방향을 계산
@@ -50,12 +61,6 @@ public class YellowHandBullet : MonoBehaviour
         {
             // 현재 회전된 방향으로 앞으로 이동합니다.
             transform.position += transform.up * speed * Time.deltaTime;
-        }
-
-        // 플레이어 시야에 보이지 않을 경우 제거
-        if (transform.position.y <= -16)
-        {
-            Destroy(this.gameObject);
         }
     }
 

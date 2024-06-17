@@ -7,24 +7,44 @@ public class PlayerInfo : MonoBehaviour
     private static PlayerInfo instance;
     public static PlayerInfo Instance { get { return instance; } }
 
+    private Animator animator;
+
     public int hp = 20;
 
     public bool isInvincibility = false;
+    private bool isDie = false;
 
     private void Awake()
     {
         instance = this; 
     }
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
+        //if (hp > 0)
+        //{
+        //    UIManager.Instance.playerHpText.text = hp.ToString();
+        //}
+        //else
+        //{
+        //    UIManager.Instance.playerHpText.text = "0";
+        //}
         Die();
     }
 
     public void TakeDamage(int Damage)
     {
-        hp -= Damage;
-        Debug.Log($"{Damage}의 데미지를 입었습니다, 남은 HP: {this.hp}");
+        if (hp > 0)
+        {
+            hp -= Damage;
+            Debug.Log($"{Damage}의 데미지를 입었습니다, 남은 HP: {this.hp}");
+        }
+        
         StartCoroutine(InvincibilityJudgement());
     }
 
@@ -35,16 +55,19 @@ public class PlayerInfo : MonoBehaviour
     private IEnumerator InvincibilityJudgement()
     {
         isInvincibility = true;
+        animator.SetBool("isInvincibillity", isInvincibility);
         yield return new WaitForSeconds( 1 );
         isInvincibility = false;
+        animator.SetBool("isInvincibillity", isInvincibility);
         yield return null;
     }
 
     public void Die()
     {
-        if(hp <= 0)
+        if(hp <= 0 && !isDie)
         {
             hp = 0;
+            isDie = true;
             Debug.Log("플레이어 사망");
         }
     }
