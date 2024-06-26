@@ -6,18 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class SplashMain : MonoBehaviour
 {
-    public RectTransform logoRect;
-    public RectTransform handRect;
-
-    public DOTweenAnimation logo;
-    public DOTweenAnimation hand;
     public DOTweenAnimation fade;
 
-    public bool isLaps = false;
-
-    private void Start()
+    public void FadeIn()
     {
-        logo.DORestartById("0");
+        fade.DORestartById("0");
     }
 
     public void GotoMenu()
