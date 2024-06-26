@@ -7,6 +7,7 @@ TagManager:
   - Folder
   - FightSign
   - Heart
+  - UICamera
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - PostProcess
+  - BloomLayer
   m_SortingLayers:
   - name: Default
     uniqueID: 0

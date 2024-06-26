@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameMain : MonoBehaviour
 {
     public GameObject[] gunPrefabs;
     public PlayerController playerController;
-    
+
+
     public void Init(GunEnums.EGunType selectedGunType)
     {
         Gun gun = this.CreateGun(selectedGunType);
         this.playerController.Init(gun);
+        
     }
 
     private Gun CreateGun(GunEnums.EGunType gunType)
@@ -21,4 +25,6 @@ public class GameMain : MonoBehaviour
         Gun gun = go.GetComponent<Gun>();
         return gun;
     }
+
+    
 }

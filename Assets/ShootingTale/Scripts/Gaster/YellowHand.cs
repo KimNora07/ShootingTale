@@ -6,7 +6,10 @@ public class YellowHand : MonoBehaviour
 {
     public static YellowHand instance;
 
+    public Animator animator;
     public ActiveBossType bossType;
+
+    
     // 탄알이 플레이어 방향으로 이동을 정해주고, 발사한다
     //탄막 오브젝트, 속도, 생성할 위치
 
@@ -20,6 +23,11 @@ public class YellowHand : MonoBehaviour
 
     private void Update()
     {
+        if(this.gameObject.GetComponent<HandInfo>().hp <= 0 && this.gameObject.activeSelf)
+        {
+            Die();
+        }
+
         if(Input.GetMouseButtonDown(0))
         {
             SummonBullet();
@@ -29,5 +37,21 @@ public class YellowHand : MonoBehaviour
     public void SummonBullet()
     {
         YellowHandPattern.Instance.StartAttack(AttackType.DetectAttack);
+    }
+
+
+    
+    public void Die()
+    {
+        Boss.Instance.isDie = true;
+        this.gameObject.GetComponent<HandInfo>().hp = 0;
+        animator.SetBool("IsDie", true);
+    }
+
+    public void EndDieAnimation()
+    {
+        LoadingManager.LoadScene("999_Ending", "99_Loading");
+        this.gameObject.SetActive(false);
+        
     }
 }

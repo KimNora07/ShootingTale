@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public enum ActiveBossType
 {
@@ -19,7 +21,12 @@ public class Boss : MonoBehaviour
 
     public List<GameObject> bosses;
 
+    public bool isDie = false;
+
     public GameObject boss;
+    public string bossName;
+
+    public Volume volume;
 
     private void Awake()
     {
@@ -29,6 +36,9 @@ public class Boss : MonoBehaviour
     private void Start()
     {
         this.boss = IsActiveBossObject();
+        bossName = boss.name;
+        UIManager.Instance.bossHpText.text = $"{Boss.Instance.bossName}'s HP: {Boss.Instance.boss.gameObject.GetComponent<HandInfo>().hp}";
+        BossColor();
     }
 
     public GameObject IsActiveBossObject()
@@ -41,5 +51,15 @@ public class Boss : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void BossColor()
+    {
+        Bloom bloom;
+
+        if (volume.profile.TryGet(out bloom))
+        {
+            bloom.tint.value = boss.GetComponent<HandInfo>().handColor;
+        }
     }
 }
