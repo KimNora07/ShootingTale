@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        var xInput = GetHorizontalAxisRaw(KeyCode.LeftArrow, KeyCode.RightArrow);
-        var yInput = GetVerticalAxisRaw(KeyCode.DownArrow, KeyCode.UpArrow);
+        //var xInput = GetHorizontalAxisRaw(KeyCode.LeftArrow, KeyCode.RightArrow);
+        //var yInput = GetVerticalAxisRaw(KeyCode.DownArrow, KeyCode.UpArrow);
 
         var xx = Input.GetAxisRaw("Horizontal");
         var yy = Input.GetAxisRaw("Vertical");
