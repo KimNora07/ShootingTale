@@ -57,6 +57,9 @@ public class MenuMain : MonoBehaviour
     [Header("SelectHowToPlayMenu")]
     public DOTweenAnimation howtoplayBackground;
 
+    [Header("SelectAudioMenu")]
+    public DOTweenAnimation audioBackground;
+
     [Header("SelectExitMenu")]
     public DOTweenAnimation exitBackground;
     public RectTransform icon_E;
@@ -90,6 +93,8 @@ public class MenuMain : MonoBehaviour
     private readonly string[] mainMenuNames = { "시작", "설정", "더보기", "나가기" };
     private readonly string[] settingMenuNames = { "비디오", "오디오", "나가기" };
     private readonly string[] otherMenuNames = { "게임방법", "제작자", "나가기" };
+
+    public AudioManager audioManager;
 
     private void Start()
     {
@@ -138,6 +143,7 @@ public class MenuMain : MonoBehaviour
         {
             IsClickHandle();
             IsClickButtonHandle();
+            IsClickButtonHandle_2();
         }
         else
         {
@@ -159,6 +165,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_M.position == mainMenuPoints[position].position && position > 0 && iconObj_M.activeSelf)
                 {
+                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                     icon_M.position = mainMenuPoints[position - 1].position;
                     position--;
                 }
@@ -168,6 +175,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_M.position == mainMenuPoints[position].position && position < mainMenuPoints.Count - 1 && iconObj_M.activeSelf)
                 {
+                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                     icon_M.position = mainMenuPoints[position + 1].position;
                     position++;
                 }
@@ -179,6 +187,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_E.position == exitMenuPoints[position].position && position > 0 && iconObj_E.activeSelf)
                 {
+                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                     icon_E.position = exitMenuPoints[position - 1].position;
                     position--;
                 }
@@ -188,6 +197,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_E.position == exitMenuPoints[position].position && position < exitMenuPoints.Count - 1 && iconObj_E.activeSelf)
                 {
+                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                     icon_E.position = exitMenuPoints[position + 1].position;
                     position++;
                 }
@@ -207,6 +217,7 @@ public class MenuMain : MonoBehaviour
         {      
             if (button.position == points[position].position && position > 0)
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                 MenuTypeSlideAnimation();
                 isLeft = true;
             }
@@ -216,6 +227,7 @@ public class MenuMain : MonoBehaviour
         { 
             if (button.position == points[position].position && position < points.Count - 1)
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
                 MenuTypeSlideAnimation();
                 isRight = true;
             }
@@ -268,6 +280,7 @@ public class MenuMain : MonoBehaviour
 
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonClick);
         if (button.position == points[position].position)
         {
             if (menuType == MenuType.Main)
@@ -296,7 +309,7 @@ public class MenuMain : MonoBehaviour
                         // 비디오 버튼 눌렀을 때 함수
                         break;
                     case 1:
-                        // 오디오 버튼 눌렀을 때 함수
+                        AudioButton();
                         break;
                     case 2:
                         BackButton();
@@ -324,6 +337,7 @@ public class MenuMain : MonoBehaviour
     {
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonClick);
         if (menuType == MenuType.InMain)
         {
             if (!iconObj_M.activeSelf) return;
@@ -356,6 +370,16 @@ public class MenuMain : MonoBehaviour
                         break;
                 }
             }
+        }
+    }
+
+    private void IsClickButtonHandle_2()
+    {
+        if (!Input.GetKeyDown(KeyCode.X)) return;
+
+        if(menuType == MenuType.Audio)
+        {
+            BackButton();
         }
     }
 
@@ -419,7 +443,13 @@ public class MenuMain : MonoBehaviour
 
     public void AudioButton()
     {
+        isClick = true;
+        title.DOPauseAllById("2");          // Title 둥실둥실 애니메이션 멈춤
+        title.DORestartById("1");           // Title을 위로 올림
+        audioBackground.DORestartById("0");
 
+        position = 0;
+        menuType = MenuType.Audio;
     }
 
     public void BackButton()
@@ -472,6 +502,21 @@ public class MenuMain : MonoBehaviour
             button = selectButton_M;
             buttonText = selectButtonText_M;
             InitList(startPoint, settingPoint, otherPoint, exitPoint_M);
+        }
+
+        if(menuType == MenuType.Audio)
+        {
+            audioManager.ApplyChanges();
+
+            isClick = false;
+            menuType = MenuType.Setting;
+            title.DORestartById("0");
+            settingSelectBar.DORestartById("0");
+            audioBackground.DORestartById("1");
+            position = 0;
+            button = selectButton_S;
+            buttonText = selectButtonText_S;
+            InitList(videoPoint, audioPoint, exitPoint_S);
         }
     }
 
