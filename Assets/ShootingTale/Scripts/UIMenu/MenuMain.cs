@@ -94,10 +94,10 @@ public class MenuMain : MonoBehaviour
     private readonly string[] settingMenuNames = { "비디오", "오디오", "나가기" };
     private readonly string[] otherMenuNames = { "게임방법", "제작자", "나가기" };
 
-    public AudioManager audioManager;
-
     private void Start()
     {
+        AudioManager.Instance.PlayBGM(AudioManager.Instance.menuBGM);
+        position = 0;
         Init();
     }
 
@@ -165,7 +165,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_M.position == mainMenuPoints[position].position && position > 0 && iconObj_M.activeSelf)
                 {
-                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                     icon_M.position = mainMenuPoints[position - 1].position;
                     position--;
                 }
@@ -175,7 +175,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_M.position == mainMenuPoints[position].position && position < mainMenuPoints.Count - 1 && iconObj_M.activeSelf)
                 {
-                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                     icon_M.position = mainMenuPoints[position + 1].position;
                     position++;
                 }
@@ -187,7 +187,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_E.position == exitMenuPoints[position].position && position > 0 && iconObj_E.activeSelf)
                 {
-                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                     icon_E.position = exitMenuPoints[position - 1].position;
                     position--;
                 }
@@ -197,7 +197,7 @@ public class MenuMain : MonoBehaviour
             {
                 if (icon_E.position == exitMenuPoints[position].position && position < exitMenuPoints.Count - 1 && iconObj_E.activeSelf)
                 {
-                    AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                     icon_E.position = exitMenuPoints[position + 1].position;
                     position++;
                 }
@@ -217,7 +217,7 @@ public class MenuMain : MonoBehaviour
         {      
             if (button.position == points[position].position && position > 0)
             {
-                AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                 MenuTypeSlideAnimation();
                 isLeft = true;
             }
@@ -227,7 +227,7 @@ public class MenuMain : MonoBehaviour
         { 
             if (button.position == points[position].position && position < points.Count - 1)
             {
-                AudioManager.instance.PlaySFX(AudioManager.instance.buttonMove);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonMove);
                 MenuTypeSlideAnimation();
                 isRight = true;
             }
@@ -280,7 +280,7 @@ public class MenuMain : MonoBehaviour
 
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
-        AudioManager.instance.PlaySFX(AudioManager.instance.buttonClick);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         if (button.position == points[position].position)
         {
             if (menuType == MenuType.Main)
@@ -337,7 +337,7 @@ public class MenuMain : MonoBehaviour
     {
         if (!Input.GetKeyDown(KeyCode.Z)) return;
 
-        AudioManager.instance.PlaySFX(AudioManager.instance.buttonClick);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         if (menuType == MenuType.InMain)
         {
             if (!iconObj_M.activeSelf) return;
@@ -506,7 +506,7 @@ public class MenuMain : MonoBehaviour
 
         if(menuType == MenuType.Audio)
         {
-            audioManager.ApplyChanges();
+            AudioManager.Instance.ApplyChanges();
 
             isClick = false;
             menuType = MenuType.Setting;

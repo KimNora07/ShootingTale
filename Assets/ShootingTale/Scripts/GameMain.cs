@@ -6,9 +6,26 @@ using UnityEngine.Rendering.Universal;
 
 public class GameMain : MonoBehaviour
 {
+    public static GameMain instance;
+
     public GameObject[] gunPrefabs;
     public PlayerController playerController;
 
+    public ProgressType progressType;
+
+    private void Awake()
+    {
+        instance = this;
+        progressType = ProgressType.Wait;
+    }
+
+    private void Start()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayBGM(AudioManager.Instance.battleBGM);
+        }
+    }
 
     public void Init(GunEnums.EGunType selectedGunType)
     {

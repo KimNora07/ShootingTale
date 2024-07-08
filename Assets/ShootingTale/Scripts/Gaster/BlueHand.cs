@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlueHand : MonoBehaviour
@@ -13,8 +11,12 @@ public class BlueHand : MonoBehaviour
 
     public bool IsActive = false;
 
+    private Animator animator;
+
     private void OnEnable()
     {
+        animator = GetComponent<Animator>();
+
         Init();
     }
 
@@ -38,7 +40,12 @@ public class BlueHand : MonoBehaviour
 
     private void Update()
     {
-        if(!IsActive)
+        if(this.gameObject.GetComponent<HandInfo>().hp <= 0 && this.gameObject.activeSelf)
+        {
+            Die();
+        }
+
+        if(!IsActive && GameMain.instance.progressType == ProgressType.Start)
         {
             Init();
             GameObject obj = Instantiate(sawbladePrefab, instantiatePosition);
@@ -68,4 +75,18 @@ public class BlueHand : MonoBehaviour
                               new Vector2(wayPoints[3].position.x, wayPoints[3].position.y));
         }
     }
+
+    public void Die()
+    {
+        Boss.Instance.isDie = true;
+        this.gameObject.GetComponent<HandInfo>().hp = 0;
+        animator.SetBool("IsDie", true);
+    }
+
+    public void EndAnimation()
+    {
+        LoadingManager.LoadScene("999_Ending", "99_Loading");
+        this.gameObject.SetActive(false);
+    }
 }
+

@@ -43,4 +43,16 @@ public class SawBlade : MonoBehaviour
         bluehand.IsActive = false;
         Destroy(this.gameObject);   
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (!collision.GetComponent<PlayerInfo>().isInvincibility)
+            {
+                collision.GetComponent<PlayerInfo>().TakeDamage(1);
+                UIManager.Instance.playerHpText.text = PlayerInfo.Instance.hp.ToString();
+            }
+        }
+    }
 }

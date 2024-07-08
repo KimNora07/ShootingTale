@@ -8,6 +8,7 @@ TagManager:
   - FightSign
   - Heart
   - UICamera
+  - StartSign
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - Sign
-  - 
-  - 
+  - Player
+  - SliderImage
   - 
   - 
   - 
@@ -44,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3860123289
+    locked: 0
+  - name: SliderImage
+    uniqueID: 1757731251
     locked: 0

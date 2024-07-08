@@ -9,6 +9,8 @@ public class YellowHand : MonoBehaviour
     public Animator animator;
     public ActiveBossType bossType;
 
+    private bool isSelectedPattern = false;
+
     
     // 탄알이 플레이어 방향으로 이동을 정해주고, 발사한다
     //탄막 오브젝트, 속도, 생성할 위치
@@ -28,19 +30,50 @@ public class YellowHand : MonoBehaviour
             Die();
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(GameMain.instance.progressType == ProgressType.Start && !isSelectedPattern)
         {
-            SummonBullet();
-        }      
+            StartCoroutine(RandomPattern());
+        }
     }
 
-    public void SummonBullet()
+    public void DetectPattern()
     {
         YellowHandPattern.Instance.StartAttack(AttackType.DetectAttack);
     }
 
+    public void StopDetectPattern()
+    {
+        YellowHandPattern.Instance.StopAttack(AttackType.DetectAttack);
+    }
 
-    
+    public void SniperPattern()
+    {
+        AttackLine.instance.StartAttack(AttackType.SniperAttack);
+    }
+
+    public void StopSniperPattern()
+    {
+        AttackLine.instance.StopAttack(AttackType.SniperAttack);
+    }
+
+    private IEnumerator RandomPattern()
+    {
+        isSelectedPattern = true;
+
+        int randomIndex = Random.Range(0, 2);
+
+        switch (randomIndex)
+        {
+            case 0: AttackLine.instance.Init(); StopSniperPattern(); DetectPattern(); break;
+            case 1: AttackLine.instance.Init(); StopDetectPattern(); SniperPattern(); break;
+            case 2: AttackLine.instance.Init(); StopSniperPattern(); StopDetectPattern(); DetectPattern(); SniperPattern(); break;
+        }
+
+        int randomTime = Random.Range(5, 10);
+        yield return new WaitForSeconds(randomTime);
+        isSelectedPattern = false;
+    }
+
     public void Die()
     {
         Boss.Instance.isDie = true;
@@ -50,8 +83,11 @@ public class YellowHand : MonoBehaviour
 
     public void EndDieAnimation()
     {
-        LoadingManager.LoadScene("999_Ending", "99_Loading");
+        AttackLine.instance.Init();
+
         this.gameObject.SetActive(false);
-        
+        Boss.Instance.nextBoss.SetActive(true);
+        Boss.Instance.isDie = false;
+        Boss.Instance.Init();
     }
 }

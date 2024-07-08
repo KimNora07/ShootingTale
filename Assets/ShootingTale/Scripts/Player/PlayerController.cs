@@ -251,6 +251,8 @@ public class PlayerController : MonoBehaviour
             if (!isShot && isFight)
             {
                 this.bullet.Shoot();
+                if (AudioManager.Instance != null)
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.shot);
                 StartCoroutine(Co_ShotCoolTime());
             }
         }
@@ -280,18 +282,31 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(Co_FightCoolTime());
                     Destroy(hit.collider.gameObject);
                 }
+
+                if (hit.collider.CompareTag("StartSign"))
+                {
+                    GameMain.instance.progressType = ProgressType.Start;
+                    Destroy(hit.collider.gameObject);
+                }
             }
         }
     }
 
     private IEnumerator Co_FightCoolTime()
     {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.wave);
+
         changeAnimator.SetBool("isFight", true);
         spriteRenderer.sprite = canShotSprite;
         waveAnimator.SetBool("isFightWave", true);
         waveAnimator.SetBool("isNormalWave", false);
         isFight = true;
         yield return fightCoolTime;
+
+        if(AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.wave);
+
         isFight = false;
         changeAnimator.SetBool("isFight", false);
         spriteRenderer.sprite = normalSprite;

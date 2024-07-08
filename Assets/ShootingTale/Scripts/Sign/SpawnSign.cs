@@ -17,7 +17,15 @@ public class SpawnSign : MonoBehaviour
     {
         isSummon = false;
         waitForSeconds = new WaitForSeconds(spawnRate);
-        SummonSign();
+    }
+
+    private void Update()
+    {
+        if (!isSummon && GameMain.instance.progressType == ProgressType.Start)
+        {
+            SummonSign();
+        }
+        
     }
 
     public void SummonSign()
@@ -27,12 +35,9 @@ public class SpawnSign : MonoBehaviour
 
     private IEnumerator Co_SpawnRate()
     {
-        if (!isSummon)
-        {
-            yield return waitForSeconds;
-            int index = Random.Range(0, spawnPoints.Length);
-            Instantiate(signPrefab, spawnPoints[index].transform);
-            isSummon = true;
-        }
+        isSummon = true;
+        yield return waitForSeconds;
+        int index = Random.Range(0, spawnPoints.Length);
+        Instantiate(signPrefab, spawnPoints[index].transform);
     }
 }

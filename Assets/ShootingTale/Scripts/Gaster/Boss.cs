@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -28,17 +29,27 @@ public class Boss : MonoBehaviour
 
     public Volume volume;
 
+    public GameObject nextBoss;
+
     private void Awake()
     {
         Instance = this;
+        
     }
 
     private void Start()
+    {
+        Init();
+    }
+
+    public void Init()
     {
         this.boss = IsActiveBossObject();
         bossName = boss.name;
         UIManager.Instance.bossHpText.text = $"{Boss.Instance.bossName}'s HP: {Boss.Instance.boss.gameObject.GetComponent<HandInfo>().hp}";
         BossColor();
+
+        nextBoss = FindNextBossObject();
     }
 
     public GameObject IsActiveBossObject()
@@ -51,6 +62,24 @@ public class Boss : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public GameObject FindNextBossObject()
+    {
+        int nextIndex = 0;
+
+        for(int i = 0; i < bosses.Count; i++)
+        {
+            if (bosses[i].activeSelf)
+            {
+                nextIndex = i + 1;
+                break;
+            }
+        }
+
+        GameObject go = bosses[nextIndex];
+
+        return go;
     }
 
     public void BossColor()

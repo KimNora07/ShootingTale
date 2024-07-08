@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType { DetectAttack = 0, };
+public enum AttackType { DetectAttack = 0, SniperAttack = 1};
 
 public class YellowHandPattern : MonoBehaviour
 {
@@ -23,11 +23,16 @@ public class YellowHandPattern : MonoBehaviour
         StartCoroutine(attackType.ToString());
     }
 
+    public void StopAttack(AttackType attackType)
+    {
+        StopCoroutine(attackType.ToString());
+    }
+
     /// <summary>
     /// 랜덤한 위치에서 총알을 소환 후 플레이어방향으로 조준 후 발사하는 코루틴
     /// </summary>
     /// <returns></returns>
-    private IEnumerator DetectAttack()
+    public IEnumerator DetectAttack()
     {
         float attackRate = 0.25f;
 

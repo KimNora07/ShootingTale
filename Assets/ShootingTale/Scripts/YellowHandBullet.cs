@@ -19,7 +19,7 @@ public class YellowHandBullet : MonoBehaviour
 
     private void Update()
     {
-        PatternOne();
+        DetectPlayerAndShot();
 
         // 플레이어 시야에 보이지 않을 경우 제거
         if (transform.position.y <= -16)
@@ -28,7 +28,7 @@ public class YellowHandBullet : MonoBehaviour
         }
     }
 
-    public void PatternOne()
+    public void DetectPlayerAndShot()
     {
         if (target != null && !hasLookedAtTarget)
         {

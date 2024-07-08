@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager Instance;
 
     [SerializeField]
     private Profiles m_profiles;
@@ -16,16 +16,42 @@ public class AudioManager : MonoBehaviour
     private List<AudioController> m_VolumeText = new List<AudioController>();
 
     [Header("Audio Source")]
-    [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource sfxSource;
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
 
     [Header("Audio Clip")]
     public AudioClip buttonClick;
     public AudioClip buttonMove;
 
+    [Header("BGM")]
+    public AudioClip menuBGM;
+    public AudioClip battleBGM;
+    public AudioClip endingBGM;
+
+    [Header("SFX")]
+    public AudioClip shot;
+    public AudioClip wave;
+
+    public GameObject musicAudioSourcePrefab;
+    public GameObject sfxAudioSourcePrefab;
+
     private void Awake()
     {
-        instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        GameObject musicAudioSource = Instantiate(musicAudioSourcePrefab, this.gameObject.transform);
+        GameObject sfxAudioSource = Instantiate(sfxAudioSourcePrefab, this.gameObject.transform);
+
+        musicSource = musicAudioSource.GetComponent<AudioSource>();
+        sfxSource = sfxAudioSource.GetComponent<AudioSource>();
 
         if (m_profiles != null)
             m_profiles.SetProfile(m_profiles);
@@ -58,5 +84,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
+    }
+
+    public void PlayBGM(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
     }
 }

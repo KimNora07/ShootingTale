@@ -30,26 +30,32 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        ResetVolumeText();
+        if (masterText != null && menuMain != null)
+            ResetVolumeText();
     }
 
     void Update()
     {
-        if (menuMain.menuType == MenuType.Audio)
+        if (masterText != null && menuMain != null)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (menuMain.menuType == MenuType.Audio && masterText != null && menuMain != null)
             {
-                UpdateVolumeText(-volumeStep);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                UpdateVolumeText(volumeStep);
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    UpdateVolumeText(-volumeStep);
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    UpdateVolumeText(volumeStep);
+                }
             }
         }
     }
 
     private void UpdateVolumeText(float value)
     {
+
+        
         //audioMixer.GetFloat(volumeParameter, out currentVolume);
         float newVolume = Mathf.Clamp01(currentMasterVolume + value);
         currentMasterVolume = newVolume;
