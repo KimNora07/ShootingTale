@@ -53,8 +53,11 @@ public class LoadingManager : MonoBehaviour
                 loadingProgress = Mathf.Lerp(0.9f, 1f, time);
                 if (loadingProgress >= 1f)
                 {
-                    AudioManager.Instance.musicSource.Stop();
-                    AudioManager.Instance.sfxSource.Stop();
+                    if (AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.musicSource.Stop();
+                        AudioManager.Instance.sfxSource.Stop();
+                    }
                     oper.allowSceneActivation = true;
                     yield break;
                 }

@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private float horizontalFirstDir = 0f;    // 좌우 방향키 중 먼저 눌린 키 방향
     private float verticalFirstDir = 0f;    // 상하 방향키 중 먼저 눌린 키 방향
 
+    public GameObject attackBar;
+
     public void Init(Gun bullet)
     {
         this.bullet = bullet;
@@ -279,7 +281,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.collider.CompareTag("FightSign"))
                 {
-                    StartCoroutine(Co_FightCoolTime());
+                    //StartCoroutine(Co_FightCoolTime());
+                    attackBar.SetActive(true);
                     Destroy(hit.collider.gameObject);
                 }
 
@@ -290,6 +293,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void FightCoolTime()
+    {
+        StartCoroutine(Co_FightCoolTime());
     }
 
     private IEnumerator Co_FightCoolTime()

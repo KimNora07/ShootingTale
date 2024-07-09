@@ -4266,7 +4266,6 @@ MonoBehaviour:
   isRight: 0
   isClick: 0
   menuType: 0
-  audioManager: {fileID: 1334705948}
 --- !u!1 &668468809
 GameObject:
   m_ObjectHideFlags: 0
@@ -11383,9 +11382,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 1067287916}
   originText:
-  - "\uBC29\uD5A5\uD0A4 \uB610\uB294 W,A,S,D\uB85C \uC6C0\uC9C1\uC77C \uC218 \uC788\uC2B5\uB2C8\uB2E4"
-  - "Z\uD0A4\uB85C \uC0C1\uD638\uC791\uC6A9\uACFC \uACF5\uACA9\uC744 \uD560 \uC218
-    \uC788\uC2B5\uB2C8\uB2E4"
+  - "Z\uD0A4\uB85C \uC0C1\uD638\uC791\uC6A9\uC774 \uAC00\uB2A5\uD558\uBA70, X\uD0A4\uB294
+    \uC624\uB514\uC624\uCC3D\uC5D0\uC11C \uB098\uAC00\uAC8C \uD569\uB2C8\uB2E4"
+  - "\uD50C\uB808\uC774\uC5B4\uB97C \uCEE8\uD2B8\uB864\uD558\uAE30 \uC704\uD574\uC11C\uB294
+    \uBC29\uD5A5\uD0A4 \uB610\uB294 W,A,S,D\uD0A4\uB97C \uB204\uB974\uBA74 \uB429\uB2C8\uB2E4"
+  - "\uACF5\uACA9 \uBC84\uD2BC\uACFC \uD68C\uBCF5 \uBC84\uD2BC\uC774 \uB098\uC624\uB294\uB370
+    \uD50C\uB808\uC774\uC5B4\uB294 Z\uD0A4\uB85C \uB458\uC911 \uD558\uB098\uB97C
+    \uC120\uD0DD\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   background: {fileID: 1476953695}
   text: {fileID: 1067287919}
 --- !u!1 &1670508192

@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 15
-  bulletAtk: 5
+  bulletAtk: 05000000060000000700000008000000090000000a000000
   atkText: {fileID: 518754948745597592, guid: 9758cccdabbddc6489b67b310b351c83, type: 3}
   minusHpText: {fileID: 8480100530819916674, guid: 9758cccdabbddc6489b67b310b351c83, type: 3}

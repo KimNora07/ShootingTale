@@ -7,10 +7,17 @@ using UnityEngine.UI;
 public class PlayerBullet : MonoBehaviour
 {
     public float shootSpeed;
-    public int bulletAtk;
+
+    private int currentBulletAtk;
+    private Player player;
 
     public Text atkText;
     public DOTweenAnimation minusHpText;
+
+    private void OnEnable()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
 
     private void Update()
     {
@@ -32,9 +39,10 @@ public class PlayerBullet : MonoBehaviour
         {
             if(Boss.Instance.boss != null && !Boss.Instance.isDie)
             {
+
                 Vector3 pos = DamageTextController.Instance.uiCamera.transform.position;
-                Boss.Instance.boss.GetComponent<HandInfo>().hp -= bulletAtk;
-                DamageTextController.Instance.CreateDamageText(pos, bulletAtk);
+                Boss.Instance.boss.GetComponent<HandInfo>().hp -= player.currentPlayerAtk;
+                DamageTextController.Instance.CreateDamageText(pos, currentBulletAtk);
             }
             ObjectPool.instance.ResetForPool(this.gameObject);
         }
