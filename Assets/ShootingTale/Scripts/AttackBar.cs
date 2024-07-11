@@ -26,12 +26,12 @@ public class AttackBar : MonoBehaviour
         line.transform.position = startPos.position;
     }
 
-    public void SelectedMethod()
+    public void SelectedAttack()
     {
-        StartCoroutine(SelectedAttack());
+        StartCoroutine(Co_SelectedAttack());
     }
 
-    private IEnumerator SelectedAttack()
+    private IEnumerator Co_SelectedAttack()
     {
         isSelect = true;
 

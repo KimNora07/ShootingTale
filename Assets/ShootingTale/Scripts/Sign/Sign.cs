@@ -7,7 +7,8 @@ public enum ProgressType
 {
     Wait,
     Start,
-    Pause
+    Pause,
+    Die
 }
 
 public class Sign : MonoBehaviour

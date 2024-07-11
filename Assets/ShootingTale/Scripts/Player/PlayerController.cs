@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public Sprite normalSprite;
     public Sprite canShotSprite;
 
+    public Sprite testSprite;
+
     public LayerMask hitSign;
 
     public SpawnSign spawnSign;
@@ -66,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameMain.instance.progressType == ProgressType.Die) return;
+
         ShootBullet();
         HitSign();
         Move();
@@ -283,7 +287,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //StartCoroutine(Co_FightCoolTime());
                     attackBar.SetActive(true);
-                    Destroy(hit.collider.gameObject);
+                    SpawnSign.instance.DeleteSignAll();
                 }
 
                 if (hit.collider.CompareTag("StartSign"))
@@ -291,8 +295,27 @@ public class PlayerController : MonoBehaviour
                     GameMain.instance.progressType = ProgressType.Start;
                     Destroy(hit.collider.gameObject);
                 }
+
+                if (hit.collider.CompareTag("HealSign"))
+                {
+                    PlayerInfo.Instance.hp += 3;
+                    HealCoolTime();
+                    SpawnSign.instance.DeleteSignAll();
+                }
             }
         }
+    }
+
+    public void HealCoolTime()
+    {
+        StartCoroutine(Co_HealCoolTime());
+    }
+
+    private IEnumerator Co_HealCoolTime()
+    {
+        yield return fightCoolTime;
+        spawnSign.isSummon = false;
+        spawnSign.SummonSign();
     }
 
     public void FightCoolTime()
@@ -305,21 +328,30 @@ public class PlayerController : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.wave);
 
+        Debug.Log("Starting fight cool time.");
+
         changeAnimator.SetBool("isFight", true);
-        spriteRenderer.sprite = canShotSprite;
         waveAnimator.SetBool("isFightWave", true);
         waveAnimator.SetBool("isNormalWave", false);
+
+        this.spriteRenderer.sprite = testSprite;
         isFight = true;
+
+        Debug.Log("Sprite changed to canShotSprite, fight mode enabled.");
+
         yield return fightCoolTime;
 
-        if(AudioManager.Instance != null)
+        if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.wave);
 
         isFight = false;
         changeAnimator.SetBool("isFight", false);
-        spriteRenderer.sprite = normalSprite;
         waveAnimator.SetBool("isNormalWave", true);
         waveAnimator.SetBool("isFightWave", false);
+
+        this.spriteRenderer.sprite = normalSprite;
+        Debug.Log("Fight ended, sprite changed to normalSprite.");
+
         spawnSign.isSummon = false;
         spawnSign.SummonSign();
     }

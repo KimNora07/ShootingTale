@@ -68,7 +68,15 @@ public class PlayerInfo : MonoBehaviour
         {
             hp = 0;
             isDie = true;
-            Debug.Log("플레이어 사망");
+            animator.SetBool("isDie", true);
+            GameMain.instance.progressType = ProgressType.Die;
+            StartCoroutine(ReturnToSplash());
         }
+    }
+
+    private IEnumerator ReturnToSplash()
+    {
+        yield return new WaitForSeconds( 2f );
+        LoadingManager.LoadScene("00_Splash", "99_Loading");
     }
 }

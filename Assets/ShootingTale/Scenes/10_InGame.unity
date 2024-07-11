@@ -1397,6 +1397,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 355191519}
   normalSprite: {fileID: -503955559, guid: 193523be1459af64abef71dda134e9aa, type: 3}
   canShotSprite: {fileID: -1320119635, guid: 193523be1459af64abef71dda134e9aa, type: 3}
+  testSprite: {fileID: -1320119635, guid: 193523be1459af64abef71dda134e9aa, type: 3}
   hitSign:
     serializedVersion: 2
     m_Bits: 128
@@ -2184,7 +2185,9 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 490781977}
   - {fileID: 456183392}
-  signPrefab: {fileID: 992953610228176065, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+  signPrefabs:
+  - {fileID: 992953610228176065, guid: a899903d3767a9a47afb2189b3725022, type: 3}
+  - {fileID: 6557670587765469904, guid: 56b56ee2de5747d44948fe764c50e20c, type: 3}
   isSummon: 0
 --- !u!4 &490781977
 Transform:

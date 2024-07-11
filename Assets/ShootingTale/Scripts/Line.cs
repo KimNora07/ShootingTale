@@ -20,12 +20,12 @@ public class Line : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 this.transform.localPosition += new Vector3(0, 0, 0);
-                attackBar.SelectedMethod();
+                attackBar.SelectedAttack();
             }
             if (this.transform.localPosition.x >= 84f)
             {
                 this.transform.localPosition += new Vector3(0, 0, 0);
-                attackBar.SelectedMethod();
+                attackBar.SelectedAttack();
             }
         }
 

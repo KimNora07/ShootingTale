@@ -39,7 +39,6 @@ public class PlayerBullet : MonoBehaviour
         {
             if(Boss.Instance.boss != null && !Boss.Instance.isDie)
             {
-
                 Vector3 pos = DamageTextController.Instance.uiCamera.transform.position;
                 Boss.Instance.boss.GetComponent<HandInfo>().hp -= player.currentPlayerAtk;
                 DamageTextController.Instance.CreateDamageText(pos, currentBulletAtk);

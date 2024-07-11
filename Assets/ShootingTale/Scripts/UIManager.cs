@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        bossHpText.text = $"{Boss.Instance.bossName}'s HP: {Boss.Instance.boss.GetComponent<HandInfo>().hp}"; 
+        bossHpText.text = $"{Boss.Instance.bossName}'s HP: {Boss.Instance.boss.GetComponent<HandInfo>().hp}";
+        playerHpText.text = PlayerInfo.Instance.hp.ToString();
     }
 }
