@@ -4224,6 +4224,7 @@ GameObject:
   - component: {fileID: 1240750332}
   - component: {fileID: 1240750333}
   - component: {fileID: 1240750334}
+  - component: {fileID: 1240750335}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -4276,6 +4277,18 @@ MonoBehaviour:
   uiCamera: {fileID: 1945836743}
   canvas: {fileID: 1740833066}
   dmgTxt: {fileID: 5984233470476250114, guid: 9758cccdabbddc6489b67b310b351c83, type: 3}
+--- !u!114 &1240750335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240750331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e050b5789b6215d4da243fda72d9299d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1263303413
 GameObject:
   m_ObjectHideFlags: 0
