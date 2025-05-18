@@ -8,7 +8,7 @@ public class DuelGun : Gun
     {
         base.Shoot();
 
-        GameObject go = Instantiate(this.bulletPrefab);
+        var go = Instantiate(this.bulletPrefab);
         go.transform.position = this.bulletPoint2.position;
     }
 }

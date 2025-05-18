@@ -14,18 +14,10 @@ public class TextTyping : MonoBehaviour
     public TMP_Text message;
     [TextArea]
     public List<string> originText;
-
-    private AnimationManager _animationManager;
-    private MenuMain _menuMain;
     
     public Image background;
     public TMP_Text text;
-
-    private void Awake()
-    {
-        _animationManager = GetComponent<AnimationManager>();
-        _menuMain = GetComponent<MenuMain>();
-    }
+    
     public void StartTyping()
     {
         StartCoroutine(TypingRoutine());
@@ -33,11 +25,11 @@ public class TextTyping : MonoBehaviour
 
     private void EndTyping()
     {
-        _animationManager.FadeOutAnimation(background, 1, 0, Color.white, null, () =>
+        AnimationUtility.FadeOutAnimation(this, background, 1, 0, Color.white, null, () =>
         {
-            _menuMain.EndHowToPlay();
+            //menuManager.EndHowToPlay();
         });
-        _animationManager.FadeOutAnimation(text, 1, 0, new Color(0.333f, 0.333f, 0.333f), null, null);
+        AnimationUtility.FadeOutAnimation(this, text, 1, 0, new Color(0.333f, 0.333f, 0.333f), null, null);
         message.text = "";
     }
 

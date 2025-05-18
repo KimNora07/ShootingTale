@@ -23,7 +23,7 @@ public class YellowHand : MonoBehaviour
             Die();
         }
 
-        if(GameMain.instance.progressType == ProgressType.Start && !isSelectedPattern)
+        if(GameManager.Instance.progressType == ProgressType.Start && !isSelectedPattern)
         {
             StartCoroutine(RandomPattern());
         }

@@ -12,7 +12,7 @@ public class FixResolution : MonoBehaviour
         SetResolution();
     }
     
-    public void SetResolution()
+    private void SetResolution()
     {
         int setWidth = 1920; 
         int setHeight = 1080; 

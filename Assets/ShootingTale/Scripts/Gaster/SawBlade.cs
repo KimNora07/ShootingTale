@@ -15,8 +15,8 @@ public class SawBlade : MonoBehaviour
     private Vector3 bezierPosition;
 
     private LineRenderer lineRenderer;
-    public int segmentCount = 20; // Bezier curve¸¦ ³ª´­ segmentÀÇ °³¼ö
-    public float lineWidth = 0.1f; // LineRendererÀÇ ±½±â
+    public int segmentCount = 20; // Bezier curveë¥¼ ë‚˜ëˆŒ segmentì˜ ê°œìˆ˜
+    public float lineWidth = 0.1f; // LineRendererì˜ êµµê¸°
 
     private void OnEnable()
     {
@@ -25,8 +25,8 @@ public class SawBlade : MonoBehaviour
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.positionCount = segmentCount + 1;
-        lineRenderer.startWidth = lineWidth; // ½ÃÀÛ ±½±â ¼³Á¤
-        lineRenderer.endWidth = lineWidth; // ³¡ ±½±â ¼³Á¤
+        lineRenderer.startWidth = lineWidth; // ì‹œì‘ êµµê¸° ì„¤ì •
+        lineRenderer.endWidth = lineWidth; // ë êµµê¸° ì„¤ì •
         lineRenderer.startColor = Color.red;
         lineRenderer.endColor = Color.red;
 

@@ -4,31 +4,19 @@ using UnityEngine;
 
 public class FightSign : Sign
 {
-    private void Start()
-    {
-        this.Init();
-    }
-
-    protected override void Init()
-    {
-        base.Init();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag(ConstantsManager.PlayerStr))
         {
-            spriteRenderer.sprite = selectedSprite;
+            SpriteRenderer.sprite = selectedSprite;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag(ConstantsManager.PlayerStr))
         {
-            spriteRenderer.sprite = normalSprite;
+            SpriteRenderer.sprite = normalSprite;
         }
     }
-
-    
 }

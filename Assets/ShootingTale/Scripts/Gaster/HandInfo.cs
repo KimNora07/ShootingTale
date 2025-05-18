@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class HandInfo : MonoBehaviour
 {
-    public int hp;
+    public float hp;
 
     public Color handColor;
 }

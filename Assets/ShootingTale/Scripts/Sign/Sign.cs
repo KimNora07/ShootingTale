@@ -13,14 +13,19 @@ public enum ProgressType
 
 public class Sign : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    protected SpriteRenderer SpriteRenderer;
 
     public Sprite normalSprite;
     public Sprite selectedSprite;
 
-
-    protected virtual void Init()
+    private void Awake()
     {
-        spriteRenderer.sprite = normalSprite;
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        Init();
+    }
+    
+    private void Init()
+    {
+        SpriteRenderer.sprite = normalSprite;
     }
 }

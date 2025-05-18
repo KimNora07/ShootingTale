@@ -15,7 +15,7 @@ public class BlueHand : MonoBehaviour
 
     private Animator animator;
     private LineRenderer lineRenderer;
-    public int segmentCount = 20; // Bezier curve¸¦ ³ª´­ segmentÀÇ °³¼ö
+    public int segmentCount = 20; // Bezier curveï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ segmentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public GameObject blueHandObj;
 
@@ -58,7 +58,7 @@ public class BlueHand : MonoBehaviour
             Die();
         }
 
-        if(!IsActive && GameMain.instance.progressType == ProgressType.Start)
+        if(!IsActive && GameManager.Instance.progressType == ProgressType.Start)
         {
             Init();
             GameObject obj = Instantiate(sawbladePrefab, instantiatePosition);

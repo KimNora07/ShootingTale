@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class SpawnSign : MonoBehaviour
 {
-    public static SpawnSign instance;
-
+    public static SpawnSign Instance;
 
     public PlayerController playerController;
 
     public float spawnRate;
-    private WaitForSeconds waitForSeconds;
+    private WaitForSeconds _waitForSeconds;
     public Transform[] spawnPoints;
     public GameObject[] signPrefabs;
 
@@ -18,29 +17,28 @@ public class SpawnSign : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
     {
         isSummon = false;
-        waitForSeconds = new WaitForSeconds(spawnRate);
+        _waitForSeconds = new WaitForSeconds(spawnRate);
     }
 
     private void Update()
     {
-        if (!isSummon && GameMain.instance.progressType == ProgressType.Start)
+        if (!isSummon && GameManager.Instance.progressType == ProgressType.Start)
         {
             SummonSign();
         }
-        
     }
 
     public void DeleteSignAll()
     {
-        for(int i = 0; i < spawnPoints.Length; i++)
+        foreach (var point in spawnPoints)
         {
-            Destroy(spawnPoints[i].GetChild(0).gameObject);
+            Destroy(point.GetChild(0).gameObject);
         }
     }
 
@@ -52,39 +50,19 @@ public class SpawnSign : MonoBehaviour
     private IEnumerator Co_SpawnRate()
     {
         isSummon = true;
-        yield return waitForSeconds;
+        yield return _waitForSeconds;
         int randomIndex = Random.Range(0, spawnPoints.Length);
         int randomSign = Random.Range(0, signPrefabs.Length);
-        GameObject obj = Instantiate(signPrefabs[randomSign], spawnPoints[randomIndex].transform);
+        var obj = Instantiate(signPrefabs[randomSign], spawnPoints[randomIndex].transform);
 
-        for (int i = 0; i < signPrefabs.Length; i++)
+        foreach (var signPrefab in signPrefabs)
         {
-            for (int j = 0; j < spawnPoints.Length; j++)
+            foreach (var point in spawnPoints)
             {
-                // 현재 프리팹과 스폰 포인트가 처음에 선택된 것과 다른지 확인
-                if (signPrefabs[i] != obj && spawnPoints[j].transform != obj.transform.parent)
-                {
-                    // 현재 스폰 포인트와 오브젝트 정보를 로그로 출력
-                    Debug.Log($"{spawnPoints[j].gameObject}, {signPrefabs[i].gameObject}");
-
-                    // 새 프리팹을 현재 스폰 포인트에 인스턴스화
-                    Instantiate(signPrefabs[i], spawnPoints[j].transform);
-                    yield break; // 유효한 조합을 찾았으므로 루프 종료
-                }
+                if (signPrefab == obj || point.transform == obj.transform.parent) continue;
+                Instantiate(signPrefab, point.transform);
+                yield break;
             }
         }
-
-        //for (int i = 0; i < signPrefabs.Length; i++)
-        //{
-        //    for (int j = 0; j < spawnPoints.Length; j++)
-        //    {
-        //        if (obj != signPrefabs[i] && obj.transform.parent.gameObject != spawnPoints[j].gameObject)
-        //        {
-        //            Debug.Log($"{obj.transform.parent.gameObject}, {spawnPoints[j].gameObject}");
-        //            Instantiate(signPrefabs[j], spawnPoints[i].transform);
-        //            yield break;
-        //        }
-        //    }
-        //}
     }
 }

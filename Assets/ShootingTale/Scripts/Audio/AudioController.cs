@@ -7,48 +7,44 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class AudioController : MonoBehaviour
 {
     public AudioMixer audioMixer;
-
-    private readonly string _masterParameter = "MasterVolume";
-    //private readonly string bgmParameter = "BGMVolume";
-    //private readonly string sfxParameter = "SFXVolume";
+    //private const string BgmParameter = "BGMVolume";
+    //private const string SfxParameter = "SFXVolume";
 
     public TMP_Text masterText;
     //public TMP_Text bgmText;
     //public TMP_Text sfxText;
 
-    public float volumeStep = 0.05f; // �ּ� 0, �ִ� 1, 0.05f = 5%
+    public float volumeStep = 0.05f; 
 
     public float currentMasterVolume = 0.0f;
     //public float currentBgmVolume = 0.0f;
     //public float currentSFXVolume = 0.0f;
 
-    public MenuMain menuMain;
+    public MenuModel model;
 
-    private void Start()
+    private void Awake()
     {
-        if (masterText && menuMain)
-            ResetVolumeText();
+        model = new MenuModel();
+        if (masterText) ResetVolumeText();
     }
 
-    void Update()
+    private void Update()
     {
-        if (masterText&& menuMain)
+        if (!masterText) return;
+        if (model.CurrentMenuType.ToString() != model.MenuItems[MenuType.Setting][1] || !masterText) return;
+        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (menuMain.menuType == MenuType.Audio && masterText && menuMain)
-            {
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    UpdateVolumeText(-volumeStep);
-                }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    UpdateVolumeText(volumeStep);
-                }
-            }
+            UpdateVolumeText(-volumeStep);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            UpdateVolumeText(volumeStep);
         }
     }
 
@@ -57,13 +53,14 @@ public class AudioController : MonoBehaviour
         float newVolume = Mathf.Clamp01(currentMasterVolume + value);
         currentMasterVolume = newVolume;
 
-        if (currentMasterVolume >= 1.001f)
+        switch (currentMasterVolume)
         {
-            currentMasterVolume = 1;
-        }
-        else if (currentMasterVolume <= 0)
-        {
-            currentMasterVolume = 0.001f;
+            case >= 1.001f:
+                currentMasterVolume = 1;
+                break;
+            case <= 0:
+                currentMasterVolume = 0.001f;
+                break;
         }
 
         if (masterText)
@@ -73,17 +70,16 @@ public class AudioController : MonoBehaviour
 
         if (Settings.Profile)
         {
-            Settings.Profile.SetAudioLevels(_masterParameter, currentMasterVolume);
+            Settings.Profile.SetAudioLevels(ConstantsManager.MasterParameter, currentMasterVolume);
         }
     }
 
     public void ResetVolumeText()
     {
-        if(Settings.Profile)
-        {
-            float volume = Settings.Profile.GetAudioLevels(_masterParameter);
-            currentMasterVolume = volume;
-            UpdateVolumeText(0);
-        }
+        if (!Settings.Profile) return;
+        
+        float volume = Settings.Profile.GetAudioLevels(ConstantsManager.MasterParameter);
+        currentMasterVolume = volume;
+        UpdateVolumeText(0);
     }
 }

@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         Init();
     }
 
-    public void Init()
+    private void Init()
     {
         playerHpText.text = PlayerInfo.Instance.hp.ToString();
     }

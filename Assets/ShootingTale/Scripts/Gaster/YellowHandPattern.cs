@@ -8,7 +8,7 @@ public class YellowHandPattern : MonoBehaviour
 {
     public static YellowHandPattern Instance { get; private set; }
 
-    public GameObject bulletPrefab = null; // Åº¸· ¿ÀºêÁ§Æ®
+    public GameObject bulletPrefab = null; // Åºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     public Transform[] points;
     public Transform target;
     public Transform saveTarget;
@@ -27,11 +27,7 @@ public class YellowHandPattern : MonoBehaviour
     {
         StopCoroutine(attackType.ToString());
     }
-
-    /// <summary>
-    /// ·£´ıÇÑ À§Ä¡¿¡¼­ ÃÑ¾ËÀ» ¼ÒÈ¯ ÈÄ ÇÃ·¹ÀÌ¾î¹æÇâÀ¸·Î Á¶ÁØ ÈÄ ¹ß»çÇÏ´Â ÄÚ·çÆ¾
-    /// </summary>
-    /// <returns></returns>
+    
     public IEnumerator DetectAttack()
     {
         float attackRate = 0.25f;

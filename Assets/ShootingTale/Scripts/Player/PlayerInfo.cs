@@ -26,14 +26,6 @@ public class PlayerInfo : MonoBehaviour
 
     private void Update()
     {
-        //if (hp > 0)
-        //{
-        //    UIManager.Instance.playerHpText.text = hp.ToString();
-        //}
-        //else
-        //{
-        //    UIManager.Instance.playerHpText.text = "0";
-        //}
         Die();
     }
 
@@ -42,39 +34,34 @@ public class PlayerInfo : MonoBehaviour
         if (hp > 0)
         {
             hp -= Damage;
-            Debug.Log($"{Damage}의 데미지를 입었습니다, 남은 HP: {this.hp}");
         }
         
         StartCoroutine(InvincibilityJudgement());
     }
-
-    /// <summary>
-    /// 피격당했을 시 1초 무적판정
-    /// </summary>
-    /// <returns></returns>
+    
     private IEnumerator InvincibilityJudgement()
     {
         isInvincibility = true;
-        animator.SetBool("isInvincibillity", isInvincibility);
+        animator.SetBool(ConstantsManager.Invincibility, isInvincibility);
         yield return new WaitForSeconds( 1 );
         isInvincibility = false;
-        animator.SetBool("isInvincibillity", isInvincibility);
+        animator.SetBool(ConstantsManager.Invincibility, isInvincibility);
         yield return null;
     }
 
-    public void Die()
+    private void Die()
     {
         if(hp <= 0 && !isDie)
         {
             hp = 0;
             isDie = true;
-            animator.SetBool("isDie", true);
-            GameMain.instance.progressType = ProgressType.Die;
+            animator.SetBool(ConstantsManager.Die, true);
+            GameManager.Instance.progressType = ProgressType.Die;
             StartCoroutine(ReturnToSplash());
         }
     }
 
-    private IEnumerator ReturnToSplash()
+    private static IEnumerator ReturnToSplash()
     {
         yield return new WaitForSeconds( 2f );
         LoadingManager.LoadScene("00_Splash", "99_Loading");
