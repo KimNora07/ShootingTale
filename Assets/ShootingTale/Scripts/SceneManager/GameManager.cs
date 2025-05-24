@@ -17,24 +17,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (AudioManager.Instance) 
+        if (AudioManager.Instance)
             AudioManager.Instance.PlayBGM(AudioManager.Instance.battleBGM);
     }
 
     public void Init(GunEnums.EGunType selectedGunType)
     {
-        var gun = this.CreateGun(selectedGunType);
-        this.playerController.Init(gun);
-        
+        var gun = CreateGun(selectedGunType);
+        playerController.Init(gun);
     }
 
     private Gun CreateGun(GunEnums.EGunType gunType)
     {
         var index = (int)gunType;
-        var prefab = this.gunPrefabs[index];
+        var prefab = gunPrefabs[index];
         var go = Instantiate(prefab);
         var gun = go.GetComponent<Gun>();
         return gun;
     }
-
 }

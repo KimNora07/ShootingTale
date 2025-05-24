@@ -1,19 +1,18 @@
 //System
-using System.Collections;
-using System.Collections.Generic;
 
-//UnityEngine
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//UnityEngine
 
 public class LoadingManager : MonoBehaviour
 {
-    private static string nextScene = null;     // �̵��� ���� ���� �̸��� �����ϴ� ����
-    private static float loadingProgress = 0f;  // �ε� ���� ��Ȳ
+    private static string nextScene; // �̵��� ���� ���� �̸��� �����ϴ� ����
+    private static float loadingProgress; // �ε� ���� ��Ȳ
 
     /// <summary>
-    /// �̵��� ���� ���� �̸��� �����ϰ�, �ε������� ��ȯ
+    ///     �̵��� ���� ���� �̸��� �����ϰ�, �ε������� ��ȯ
     /// </summary>
     /// <param name="sceneName">�̵��� ���� ���� �̸�</param>
     /// <param name="loadingScene">�ε� �� �̸�</param>
@@ -24,16 +23,16 @@ public class LoadingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// �ε� ���� �ڷ�ƾ
+    ///     �ε� ���� �ڷ�ƾ
     /// </summary>
     /// <returns>yield return null : 1������ ����</returns>
     public static IEnumerator CoLoadSceneProgress()
     {
         // �񵿱� �� ��ȯ ������� nextScene���� �̵�
-        AsyncOperation oper = SceneManager.LoadSceneAsync(nextScene);
+        var oper = SceneManager.LoadSceneAsync(nextScene);
         oper.allowSceneActivation = false;
 
-        float time = 0f;
+        var time = 0f;
 
         // �� ��ȯ�� �غ�� �� ���� ����
         while (!oper.isDone)
@@ -58,6 +57,7 @@ public class LoadingManager : MonoBehaviour
                         AudioManager.Instance.musicSource.Stop();
                         AudioManager.Instance.sfxSource.Stop();
                     }
+
                     oper.allowSceneActivation = true;
                     yield break;
                 }
@@ -66,7 +66,7 @@ public class LoadingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ��ư�� Ŭ���̺�Ʈ�� �ְ� LoadScene �޼ҵ带 ����
+    ///     ��ư�� Ŭ���̺�Ʈ�� �ְ� LoadScene �޼ҵ带 ����
     /// </summary>
     /// <param name="button">Ŭ�� �̺�Ʈ�� �� ��ư</param>
     /// <param name="sceneName">�̵��� ���� ���� �̸�</param>
@@ -77,16 +77,13 @@ public class LoadingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ��Ŭ�������� LoadScene �޼ҵ带 ����
+    ///     ��Ŭ�������� LoadScene �޼ҵ带 ����
     /// </summary>
     /// <param name="sceneName">�̵��� ���� ���� �̸�</param>
     /// <param name="loadingScene">�ε� �� �̸�</param>
     /// <param name="useClick">Ŭ���� ����Ͽ� ���� �ε������� ���� ����</param>
     public static void LoadScene(string sceneName = null, string loadingScene = null, bool useClick = false)
     {
-        if (useClick && Input.GetMouseButtonDown(0))
-        {
-            LoadScene(sceneName, loadingScene);
-        }
+        if (useClick && Input.GetMouseButtonDown(0)) LoadScene(sceneName, loadingScene);
     }
 }

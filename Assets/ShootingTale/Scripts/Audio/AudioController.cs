@@ -1,13 +1,10 @@
 //System
-using System.Collections;
-using System.Collections.Generic;
 
-//UnityEngine
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.Serialization;
+//UnityEngine
+using Scene.Menu;
 
 public class AudioController : MonoBehaviour
 {
@@ -19,9 +16,9 @@ public class AudioController : MonoBehaviour
     //public TMP_Text bgmText;
     //public TMP_Text sfxText;
 
-    public float volumeStep = 0.05f; 
+    public float volumeStep = 0.05f;
 
-    public float currentMasterVolume = 0.0f;
+    public float currentMasterVolume;
     //public float currentBgmVolume = 0.0f;
     //public float currentSFXVolume = 0.0f;
 
@@ -37,15 +34,10 @@ public class AudioController : MonoBehaviour
     {
         if (!masterText) return;
         if (model.CurrentMenuType.ToString() != model.MenuItems[MenuType.Setting][1] || !masterText) return;
-        
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
             UpdateVolumeText(-volumeStep);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            UpdateVolumeText(volumeStep);
-        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) UpdateVolumeText(volumeStep);
     }
 
     private void UpdateVolumeText(float value)
@@ -63,21 +55,15 @@ public class AudioController : MonoBehaviour
                 break;
         }
 
-        if (masterText)
-        {
-            masterText.text = "Volume: " + Mathf.Round(currentMasterVolume * 100).ToString("F0") + "%";
-        }
+        if (masterText) masterText.text = "Volume: " + Mathf.Round(currentMasterVolume * 100).ToString("F0") + "%";
 
-        if (Settings.Profile)
-        {
-            Settings.Profile.SetAudioLevels(ConstantsManager.MasterParameter, currentMasterVolume);
-        }
+        if (Settings.Profile) Settings.Profile.SetAudioLevels(ConstantsManager.MasterParameter, currentMasterVolume);
     }
 
     public void ResetVolumeText()
     {
         if (!Settings.Profile) return;
-        
+
         float volume = Settings.Profile.GetAudioLevels(ConstantsManager.MasterParameter);
         currentMasterVolume = volume;
         UpdateVolumeText(0);

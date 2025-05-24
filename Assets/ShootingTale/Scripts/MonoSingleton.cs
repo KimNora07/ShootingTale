@@ -1,15 +1,13 @@
 //System
-using System.Collections;
-using System.Collections.Generic;
 
-//UnityEngine
 using UnityEngine;
+//UnityEngine
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private static object lockObject = new object();
-    private static T instance = null;
-    private static bool isQuitting = false;
+    private static readonly object lockObject = new();
+    private static T instance;
+    private static bool isQuitting;
 
     public static T Instance
     {

@@ -1,8 +1,10 @@
 //UnityEngine
+
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[System.Serializable]
+[Serializable]
 public class Volumes
 {
     public string name;
@@ -38,25 +40,19 @@ public class Profiles : ScriptableObject
         foreach (var t in volumeControl)
         {
             if (t.name != name) continue;
-            else
-            {
-                if(saveInPlayerPrefs)
-                {
-                    if(PlayerPrefs.HasKey(prefPrefix + t.name))
-                    {
-                        t.volume = PlayerPrefs.GetFloat(prefPrefix + t.name);
-                    }
-                }
+            if (saveInPlayerPrefs)
+                if (PlayerPrefs.HasKey(prefPrefix + t.name))
+                    t.volume = PlayerPrefs.GetFloat(prefPrefix + t.name);
 
-                t.tempVolume = t.volume;
+            t.tempVolume = t.volume;
 
-                if (audioMixer)
-                    audioMixer.SetFloat(t.name, Mathf.Log(t.volume) * 20);
+            if (audioMixer)
+                audioMixer.SetFloat(t.name, Mathf.Log(t.volume) * 20);
 
-                volume = t.volume;
-                break;
-            }
+            volume = t.volume;
+            break;
         }
+
         return volume;
     }
 
@@ -67,12 +63,8 @@ public class Profiles : ScriptableObject
         foreach (var t in volumeControl)
         {
             if (saveInPlayerPrefs)
-            {
                 if (PlayerPrefs.HasKey(prefPrefix + t.name))
-                {
                     t.volume = PlayerPrefs.GetFloat(prefPrefix + t.name);
-                }
-            }
 
             t.tempVolume = t.volume;
 
@@ -87,12 +79,9 @@ public class Profiles : ScriptableObject
         foreach (var t in volumeControl)
         {
             if (t.name != name) continue;
-            else
-            {
-                audioMixer.SetFloat(t.name, Mathf.Log(volume) * 20);
-                t.tempVolume = volume;
-                break;
-            }
+            audioMixer.SetFloat(t.name, Mathf.Log(volume) * 20);
+            t.tempVolume = volume;
+            break;
         }
     }
 
@@ -103,10 +92,7 @@ public class Profiles : ScriptableObject
         foreach (var t in volumeControl)
         {
             float volume = t.tempVolume;
-            if(saveInPlayerPrefs)
-            {
-                PlayerPrefs.SetFloat(prefPrefix + t.name, volume);
-            }
+            if (saveInPlayerPrefs) PlayerPrefs.SetFloat(prefPrefix + t.name, volume);
             audioMixer.SetFloat(t.name, Mathf.Log(volume) * 20);
             t.volume = volume;
         }

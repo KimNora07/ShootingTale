@@ -18,6 +18,7 @@ EditorBuildSettings:
     path: Assets/ShootingTale/Scenes/99_Loading.unity
     guid: 13b35a74ddd7bc3479695b27946dd2c9
   - enabled: 1
-    path: Assets/ShootingTale/Scenes/999_Ending.unity
+    path: Assets/999_Ending.unity
     guid: 30faff05ee39795479fee48c8ba9bbd7
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

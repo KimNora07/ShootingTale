@@ -1,23 +1,22 @@
 //System
+
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-
-//UnityEngine
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using KoreanTyper;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+//UnityEngine
 
 public class TextTyping : MonoBehaviour
 {
     public TMP_Text message;
-    [TextArea]
-    public List<string> originText;
-    
+
+    [TextArea] public List<string> originText;
+
     public Image background;
     public TMP_Text text;
-    
+
     public void StartTyping()
     {
         StartCoroutine(TypingRoutine());
@@ -33,20 +32,22 @@ public class TextTyping : MonoBehaviour
         message.text = "";
     }
 
-    IEnumerator TypingRoutine()
+    private IEnumerator TypingRoutine()
     {
         message.text = "";
-        for (int t = 0; t < originText.Count; t++)
+        for (var t = 0; t < originText.Count; t++)
         {
             int strTypingLength = originText[t].GetTypingLength();
 
-            for (int i = 0; i <= strTypingLength; i++)
+            for (var i = 0; i <= strTypingLength; i++)
             {
                 message.text = originText[t].Typing(i);
                 yield return new WaitForSeconds(0.05f);
             }
+
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
         }
+
         EndTyping();
     }
 }

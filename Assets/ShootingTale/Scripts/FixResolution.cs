@@ -1,9 +1,7 @@
 //System
-using System.Collections;
-using System.Collections.Generic;
 
-//UnityEngine
 using UnityEngine;
+//UnityEngine
 
 public class FixResolution : MonoBehaviour
 {
@@ -11,12 +9,12 @@ public class FixResolution : MonoBehaviour
     {
         SetResolution();
     }
-    
+
     private void SetResolution()
     {
-        int setWidth = 1920; 
-        int setHeight = 1080; 
-        
+        var setWidth = 1920;
+        var setHeight = 1080;
+
         Screen.SetResolution(setWidth, setHeight, true);
     }
 }

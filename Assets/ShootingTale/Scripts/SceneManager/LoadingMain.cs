@@ -1,13 +1,11 @@
 //System
-using System.Collections;
-using System.Collections.Generic;
 
-//UnityEngine
 using UnityEngine;
+//UnityEngine
 
 public class LoadingMain : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         StartCoroutine(LoadingManager.CoLoadSceneProgress());
     }
