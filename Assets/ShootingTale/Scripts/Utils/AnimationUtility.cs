@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //UnityEngine
@@ -11,8 +12,10 @@ using UnityEngine.UI;
 /// </summary>
 public static class AnimationUtility
 {
+    private static readonly Dictionary<RectTransform, Coroutine> MoveCoroutines  = new();
+    
     private static IEnumerator Move(RectTransform rect, float duration, float delay, Vector2 toMove,
-        Action onPlay = null, Action onComplete = null)
+        Action onPlay = null, Action onPlaying = null, Action onComplete = null)
     {
         var startPosition = rect.anchoredPosition;
         yield return new WaitForSeconds(delay);
@@ -20,6 +23,8 @@ public static class AnimationUtility
         float elapsedTime = 0;
         while (elapsedTime < duration)
         {
+            onPlaying?.Invoke();
+            
             elapsedTime += 0.016f;
             yield return new WaitForSeconds(0.016f);
 
@@ -30,6 +35,8 @@ public static class AnimationUtility
         }
 
         onComplete?.Invoke();
+        
+        if(MoveCoroutines.ContainsKey(rect)) MoveCoroutines.Remove(rect);
     }
 
     private static IEnumerator FadeIn(Graphic graphic, float duration, float delay, Color color, Action onPlay,
@@ -141,11 +148,28 @@ public static class AnimationUtility
     /// <param name="delay">지연시간</param>
     /// <param name="toMove">이동할 위치</param>
     /// <param name="onPlay">시작했을 때 실행할 행동</param>
+    /// <param name="onPlaying"></param>
     /// <param name="onComplete">끝났을 때 실행할 행동</param>
     public static void MoveAnimation(MonoBehaviour runner, RectTransform rect, float duration, float delay,
-        Vector2 toMove, Action onPlay = null, Action onComplete = null)
+        Vector2 toMove, Action onPlay = null, Action onPlaying = null, Action onComplete = null)
     {
-        runner.StartCoroutine(Move(rect, duration, delay, toMove, onPlay, onComplete));
+        if(MoveCoroutines.TryGetValue(rect, out var existingCoroutine))
+        {
+            runner.StopCoroutine(existingCoroutine);
+            MoveCoroutines.Remove(rect);
+        }
+        
+        Coroutine newCoroutine = runner.StartCoroutine(Move(rect, duration, delay, toMove, onPlay, onPlaying, onComplete));
+        MoveCoroutines[rect] = newCoroutine;
+    }
+    
+    public static void StopMoveAnimation(MonoBehaviour runner, RectTransform rect)
+    {
+        if (MoveCoroutines.TryGetValue(rect, out var coroutine))
+        {
+            runner.StopCoroutine(coroutine);
+            MoveCoroutines.Remove(rect);
+        }
     }
 
     /// <summary>

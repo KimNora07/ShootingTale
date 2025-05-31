@@ -33,7 +33,7 @@ public class AudioController : MonoBehaviour
     private void Update()
     {
         if (!masterText) return;
-        if (model.CurrentMenuType.ToString() != model.MenuItems[MenuType.Setting][1] || !masterText) return;
+        if (model.CurrentMenuType.ToString() != model.MenuItems[MenuType.Setting][1].ToString() || !masterText) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
             UpdateVolumeText(-volumeStep);

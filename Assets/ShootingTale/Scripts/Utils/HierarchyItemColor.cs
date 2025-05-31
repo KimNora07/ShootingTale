@@ -15,6 +15,6 @@ public static class HierarchyItemColor
         var go = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
         if (go == null || !go.name.StartsWith("/", StringComparison.Ordinal)) return;
         EditorGUI.DrawRect(selectionRect, new Color(0.2196078431372549f, 0.2196078431372549f, 0.2196078431372549f, 1f));
-        EditorGUI.DropShadowLabel(selectionRect, go.name.Replace("/", "").ToUpperInvariant());
+        EditorGUI.DropShadowLabel(selectionRect, $"───── {go.name.Replace("/", "").ToUpperInvariant()} ─────");
     }
 }

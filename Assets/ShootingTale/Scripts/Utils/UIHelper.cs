@@ -18,8 +18,8 @@ public static class UIHelper
         return type is MenuType.Main or MenuType.Setting or MenuType.Other;
     }
 
-    public static bool IsAllLocked(this MenuType type)
+    public static bool IsAllLocked(this MenuState state)
     {
-        return type is MenuType.Selection;
+        return state is MenuState.Selection;
     }
 }
