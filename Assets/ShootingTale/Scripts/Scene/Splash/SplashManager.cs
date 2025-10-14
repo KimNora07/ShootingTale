@@ -1,4 +1,5 @@
 // UnityEngine
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,33 +8,39 @@ namespace Scene.Splash
 {
     public class SplashManager : MonoBehaviour
     {
-        [Header("Image")] [SerializeField] private Image sliderImage;
-
         [SerializeField] private Image fadeInImage;
         [SerializeField] private TMP_Text tipText;
 
-        private void Awake()
+        [SerializeField] private Image targetImage;
+        [SerializeField] private float startPixelSize = 50f;
+        [SerializeField] private float endPixelSize = 1f;
+        [SerializeField] private float duration = 2f;
+
+        private Material mosaicMaterial;
+
+        void Start()
         {
-            sliderImage.fillAmount = 1;
+            // 셰이더가 적용된 Material을 복제해서 사용
+            mosaicMaterial = Instantiate(targetImage.material);
+            targetImage.material = mosaicMaterial;
+
+            StartCoroutine(AnimateMosaic());
         }
 
-
-        private void Start()
+        private IEnumerator AnimateMosaic()
         {
-            AnimationUtility.SlideAnimation(this, sliderImage, 5f, 0.5f, 1, 0, 0, null,
-                () =>
-                {
-                    AnimationUtility.FadeInAnimation(this, fadeInImage, 1.5f, 0, new Color(0, 0, 0), null,
-                        () =>
-                        {
-                            AnimationUtility.FadeInAnimation(this, tipText, 1.5f, 0.5f, new Color(1, 1, 1), null,
-                                () =>
-                                {
-                                    AnimationUtility.FadeOutAnimation(this, tipText, 1.5f, 0.5f, new Color(1, 1, 1), null,
-                                        () => { SceneLoader.LoadSceneAsync(this, "01_Menu"); });
-                                });
-                        });
-                });
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                float t = elapsed / duration;
+                float pixelSize = Mathf.Lerp(startPixelSize, endPixelSize, t);
+                mosaicMaterial.SetFloat("_PixelSize", pixelSize);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            mosaicMaterial.SetFloat("_PixelSize", endPixelSize);
         }
+
     }
 }
