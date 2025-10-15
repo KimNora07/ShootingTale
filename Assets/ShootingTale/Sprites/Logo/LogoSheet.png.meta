@@ -1,0 +1,1998 @@
+fileFormatVersion: 2
+guid: 14ad9478a01221a49822aebd8bc9bea6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1540054503147736401
+    second: LogoSheet_0
+  - first:
+      213: -4855653632381914387
+    second: LogoSheet_1
+  - first:
+      213: -4264997676709972547
+    second: LogoSheet_2
+  - first:
+      213: -1331632529454548508
+    second: LogoSheet_3
+  - first:
+      213: -3060536813169526222
+    second: LogoSheet_4
+  - first:
+      213: 2318030343298985911
+    second: LogoSheet_5
+  - first:
+      213: 5931082701151894892
+    second: LogoSheet_6
+  - first:
+      213: -3921694568854197749
+    second: LogoSheet_7
+  - first:
+      213: -7040221938411667639
+    second: LogoSheet_8
+  - first:
+      213: -5002297568307862857
+    second: LogoSheet_9
+  - first:
+      213: 3043408220752756134
+    second: LogoSheet_10
+  - first:
+      213: -6014013103353973960
+    second: LogoSheet_11
+  - first:
+      213: 6444416424450033935
+    second: LogoSheet_12
+  - first:
+      213: -6521689697397303805
+    second: LogoSheet_13
+  - first:
+      213: -8144055644389331288
+    second: LogoSheet_14
+  - first:
+      213: 2487803880750852316
+    second: LogoSheet_15
+  - first:
+      213: 1003947236740639931
+    second: LogoSheet_16
+  - first:
+      213: 8239395719803564999
+    second: LogoSheet_17
+  - first:
+      213: 1963650476562136780
+    second: LogoSheet_18
+  - first:
+      213: 989688745016599760
+    second: LogoSheet_19
+  - first:
+      213: -5331731205059157643
+    second: LogoSheet_20
+  - first:
+      213: -6510745092480266662
+    second: LogoSheet_21
+  - first:
+      213: 5098965645122789474
+    second: LogoSheet_22
+  - first:
+      213: 5045102497760956939
+    second: LogoSheet_23
+  - first:
+      213: -4070105327068432242
+    second: LogoSheet_24
+  - first:
+      213: -3008570035713411348
+    second: LogoSheet_25
+  - first:
+      213: 4202232950666875947
+    second: LogoSheet_26
+  - first:
+      213: 3365163999953512809
+    second: LogoSheet_27
+  - first:
+      213: -2138252510698413174
+    second: LogoSheet_28
+  - first:
+      213: -4565060748359580934
+    second: LogoSheet_29
+  - first:
+      213: -2653495903341740205
+    second: LogoSheet_30
+  - first:
+      213: 8837981742735714039
+    second: LogoSheet_31
+  - first:
+      213: 1678301940976426387
+    second: LogoSheet_32
+  - first:
+      213: -5370224136445525189
+    second: LogoSheet_33
+  - first:
+      213: 4255036918528948857
+    second: LogoSheet_34
+  - first:
+      213: 53253256690918615
+    second: LogoSheet_35
+  - first:
+      213: -5272634379429651159
+    second: LogoSheet_36
+  - first:
+      213: -7018621518898872713
+    second: LogoSheet_37
+  - first:
+      213: -5409763205459038364
+    second: LogoSheet_38
+  - first:
+      213: -8088661896023599374
+    second: LogoSheet_39
+  - first:
+      213: 5023691200475502829
+    second: LogoSheet_40
+  - first:
+      213: -7792823431263705070
+    second: LogoSheet_41
+  - first:
+      213: -6263706768395509660
+    second: LogoSheet_42
+  - first:
+      213: -3756655152982297898
+    second: LogoSheet_43
+  - first:
+      213: 3656198519512450056
+    second: LogoSheet_44
+  - first:
+      213: 7401559509632823953
+    second: LogoSheet_45
+  - first:
+      213: -7180169598126495028
+    second: LogoSheet_46
+  - first:
+      213: 1125207481664945493
+    second: LogoSheet_47
+  - first:
+      213: 4434050144084074552
+    second: LogoSheet_48
+  - first:
+      213: 2380283051816870921
+    second: LogoSheet_49
+  - first:
+      213: 1016355615011577758
+    second: LogoSheet_50
+  - first:
+      213: 2651258127551806980
+    second: LogoSheet_51
+  - first:
+      213: -2484794301096417860
+    second: LogoSheet_52
+  - first:
+      213: 4695863145606822561
+    second: LogoSheet_53
+  - first:
+      213: 1278204921816065413
+    second: LogoSheet_54
+  - first:
+      213: 8262063609617942051
+    second: LogoSheet_55
+  - first:
+      213: 8113213087641308394
+    second: LogoSheet_56
+  - first:
+      213: 8205487946765413093
+    second: LogoSheet_57
+  - first:
+      213: -6753784204526101384
+    second: LogoSheet_58
+  - first:
+      213: 4589048800305744325
+    second: LogoSheet_59
+  - first:
+      213: 5382127265437565556
+    second: LogoSheet_60
+  - first:
+      213: 3064996987150937473
+    second: LogoSheet_61
+  - first:
+      213: -6038188234940607429
+    second: LogoSheet_62
+  - first:
+      213: 3218213671204074971
+    second: LogoSheet_63
+  - first:
+      213: -2320619840927110926
+    second: LogoSheet_64
+  - first:
+      213: 2573105515610129896
+    second: LogoSheet_65
+  - first:
+      213: -5636698156182125850
+    second: LogoSheet_66
+  - first:
+      213: -8269093857915532184
+    second: LogoSheet_67
+  - first:
+      213: -8565347662465173536
+    second: LogoSheet_68
+  - first:
+      213: 6246575800946642884
+    second: LogoSheet_69
+  - first:
+      213: -4631628992956258621
+    second: LogoSheet_70
+  - first:
+      213: 647793122849679512
+    second: LogoSheet_71
+  - first:
+      213: 416107700639719101
+    second: LogoSheet_72
+  - first:
+      213: -4771391375565338835
+    second: LogoSheet_73
+  - first:
+      213: 1094908222550034970
+    second: LogoSheet_74
+  - first:
+      213: -3633164449815495330
+    second: LogoSheet_75
+  - first:
+      213: -622289023035687902
+    second: LogoSheet_76
+  - first:
+      213: -8833379788308935799
+    second: LogoSheet_77
+  - first:
+      213: 373451109842419291
+    second: LogoSheet_78
+  - first:
+      213: 6538279788290695606
+    second: LogoSheet_79
+  - first:
+      213: 5068176092423740446
+    second: LogoSheet_80
+  - first:
+      213: 8180969893962879847
+    second: LogoSheet_81
+  - first:
+      213: -1683449392532047322
+    second: LogoSheet_82
+  - first:
+      213: 6928844050085851349
+    second: LogoSheet_83
+  - first:
+      213: 7754695893866642087
+    second: LogoSheet_84
+  - first:
+      213: -1837091612732955026
+    second: LogoSheet_85
+  - first:
+      213: 2863868847471240141
+    second: LogoSheet_86
+  - first:
+      213: -7996913310301885751
+    second: LogoSheet_87
+  - first:
+      213: -856963908335488613
+    second: LogoSheet_88
+  - first:
+      213: 3639690367129259278
+    second: LogoSheet_89
+  - first:
+      213: 7804181937013610295
+    second: LogoSheet_90
+  - first:
+      213: 470269415121095193
+    second: LogoSheet_91
+  - first:
+      213: 8903638149499694971
+    second: LogoSheet_92
+  - first:
+      213: 7859280550218584639
+    second: LogoSheet_93
+  - first:
+      213: 8315211696083151522
+    second: LogoSheet_94
+  - first:
+      213: -8062393265962073584
+    second: LogoSheet_95
+  - first:
+      213: 5252625639835780455
+    second: LogoSheet_96
+  - first:
+      213: -6338017754414129508
+    second: LogoSheet_97
+  - first:
+      213: 6225892044293873161
+    second: LogoSheet_98
+  - first:
+      213: -1343228829455826921
+    second: LogoSheet_99
+  - first:
+      213: 8234076389332603658
+    second: LogoSheet_100
+  - first:
+      213: 934698570349353453
+    second: LogoSheet_101
+  - first:
+      213: 7803277026882010839
+    second: LogoSheet_102
+  - first:
+      213: 7371623101066264750
+    second: LogoSheet_103
+  - first:
+      213: -8231960432953823765
+    second: LogoSheet_104
+  - first:
+      213: 4967795768257341805
+    second: LogoSheet_105
+  - first:
+      213: 8810369431515266347
+    second: LogoSheet_106
+  - first:
+      213: 11247876213944482
+    second: LogoSheet_107
+  - first:
+      213: -7582804956107914928
+    second: LogoSheet_108
+  - first:
+      213: 8998368149427504795
+    second: LogoSheet_109
+  - first:
+      213: 6139317022931336489
+    second: LogoSheet_110
+  - first:
+      213: 3911345643681983392
+    second: LogoSheet_111
+  - first:
+      213: -8059009803482800086
+    second: LogoSheet_112
+  - first:
+      213: -6304769320321171594
+    second: LogoSheet_113
+  - first:
+      213: 5070130515335177155
+    second: LogoSheet_114
+  - first:
+      213: 7285029431728065717
+    second: LogoSheet_115
+  - first:
+      213: 393223420764779000
+    second: LogoSheet_116
+  - first:
+      213: -559108459374334584
+    second: LogoSheet_117
+  - first:
+      213: -8803366530930394958
+    second: LogoSheet_118
+  - first:
+      213: 7865309316503685060
+    second: LogoSheet_119
+  - first:
+      213: 6238439021866937892
+    second: LogoSheet_120
+  - first:
+      213: 5793963709214753025
+    second: LogoSheet_121
+  - first:
+      213: 429285330005042632
+    second: LogoSheet_122
+  - first:
+      213: 2488835336967657499
+    second: LogoSheet_123
+  - first:
+      213: 7571719096303953106
+    second: LogoSheet_124
+  - first:
+      213: -3956720619388484860
+    second: LogoSheet_125
+  - first:
+      213: -9019204356579242095
+    second: LogoSheet_126
+  - first:
+      213: 5628101531165166072
+    second: LogoSheet_127
+  - first:
+      213: -7460272420465027458
+    second: LogoSheet_128
+  - first:
+      213: 7487234131267150255
+    second: LogoSheet_129
+  - first:
+      213: 6860653519496413743
+    second: LogoSheet_130
+  - first:
+      213: 4299996595961678823
+    second: LogoSheet_131
+  - first:
+      213: 5125586261854310329
+    second: LogoSheet_132
+  - first:
+      213: -8192242524068889307
+    second: LogoSheet_133
+  - first:
+      213: -6798467368158751127
+    second: LogoSheet_134
+  - first:
+      213: -7779715278542375601
+    second: LogoSheet_135
+  - first:
+      213: 8874681242826512967
+    second: LogoSheet_136
+  - first:
+      213: 2967599390484260793
+    second: LogoSheet_137
+  - first:
+      213: -6151944519337728817
+    second: LogoSheet_138
+  - first:
+      213: -5002809781862976008
+    second: LogoSheet_139
+  - first:
+      213: -6725142100537571291
+    second: LogoSheet_140
+  - first:
+      213: 2379148617922047278
+    second: LogoSheet_141
+  - first:
+      213: 1133962723455228174
+    second: LogoSheet_142
+  - first:
+      213: 4783709910400564338
+    second: LogoSheet_143
+  - first:
+      213: 5028924324633434750
+    second: LogoSheet_144
+  - first:
+      213: -3106518187923820957
+    second: LogoSheet_145
+  - first:
+      213: -8036119111996230872
+    second: LogoSheet_146
+  - first:
+      213: -2934546932480475800
+    second: LogoSheet_147
+  - first:
+      213: -5718735860952480821
+    second: LogoSheet_148
+  - first:
+      213: -7046027372690851287
+    second: LogoSheet_149
+  - first:
+      213: 2802898204184236328
+    second: LogoSheet_150
+  - first:
+      213: 1926522882162704750
+    second: LogoSheet_151
+  - first:
+      213: 1890522963319215666
+    second: LogoSheet_152
+  - first:
+      213: -8861739358961285915
+    second: LogoSheet_153
+  - first:
+      213: 3391705071359424228
+    second: LogoSheet_154
+  - first:
+      213: 7015320735974330090
+    second: LogoSheet_155
+  - first:
+      213: -8386659969129430776
+    second: LogoSheet_156
+  - first:
+      213: 4170281016842139284
+    second: LogoSheet_157
+  - first:
+      213: 6332472273578647724
+    second: LogoSheet_158
+  - first:
+      213: -3489865120835010044
+    second: LogoSheet_159
+  - first:
+      213: -7913350570258443079
+    second: LogoSheet_160
+  - first:
+      213: 3098262556764486392
+    second: LogoSheet_161
+  - first:
+      213: -6487876866539586374
+    second: LogoSheet_162
+  - first:
+      213: 2808873165196814093
+    second: LogoSheet_163
+  - first:
+      213: 8500923053733713483
+    second: LogoSheet_164
+  - first:
+      213: 4516728383270802079
+    second: LogoSheet_165
+  - first:
+      213: 3084194380841268525
+    second: LogoSheet_166
+  - first:
+      213: -4775796980964521754
+    second: LogoSheet_167
+  - first:
+      213: -7929751974282827979
+    second: LogoSheet_168
+  - first:
+      213: -9198986409573212356
+    second: LogoSheet_169
+  - first:
+      213: 567933600367289977
+    second: LogoSheet_170
+  - first:
+      213: 213569501525477232
+    second: LogoSheet_171
+  - first:
+      213: 176346976433868936
+    second: LogoSheet_172
+  - first:
+      213: 8307086011060735782
+    second: LogoSheet_173
+  - first:
+      213: -7173622359858543551
+    second: LogoSheet_174
+  - first:
+      213: -5749504877812017262
+    second: LogoSheet_175
+  - first:
+      213: 3540676967103189921
+    second: LogoSheet_176
+  - first:
+      213: -5903646271724238538
+    second: LogoSheet_177
+  - first:
+      213: -6835805499492031236
+    second: LogoSheet_178
+  - first:
+      213: 6923626556391500134
+    second: LogoSheet_179
+  - first:
+      213: -6610746808827643439
+    second: LogoSheet_180
+  - first:
+      213: -1217998335232544943
+    second: LogoSheet_181
+  - first:
+      213: 523624969223268535
+    second: LogoSheet_182
+  - first:
+      213: 16551081788491666
+    second: LogoSheet_183
+  - first:
+      213: -6708745567455881404
+    second: LogoSheet_184
+  - first:
+      213: -7004550035241072325
+    second: LogoSheet_185
+  - first:
+      213: 6318691855281475202
+    second: LogoSheet_186
+  - first:
+      213: -4159298662225003491
+    second: LogoSheet_187
+  - first:
+      213: 8076410274919183595
+    second: LogoSheet_188
+  - first:
+      213: -3270319871022838276
+    second: LogoSheet_189
+  - first:
+      213: -6547492648332043767
+    second: LogoSheet_190
+  - first:
+      213: -8828307595283419146
+    second: LogoSheet_191
+  - first:
+      213: 5833661637824142219
+    second: LogoSheet_192
+  - first:
+      213: 6156161826388490700
+    second: LogoSheet_193
+  - first:
+      213: -110381520035124094
+    second: LogoSheet_194
+  - first:
+      213: 1042713392924605169
+    second: LogoSheet_195
+  - first:
+      213: -7658592932013421739
+    second: LogoSheet_196
+  - first:
+      213: -1160591508701534506
+    second: LogoSheet_197
+  - first:
+      213: -8123547312537042318
+    second: LogoSheet_198
+  - first:
+      213: -6769009659290063177
+    second: LogoSheet_199
+  - first:
+      213: -6799218833967338998
+    second: LogoSheet_200
+  - first:
+      213: -4190870399129372931
+    second: LogoSheet_201
+  - first:
+      213: 4684167849684542078
+    second: LogoSheet_202
+  - first:
+      213: -5918959151518304498
+    second: LogoSheet_203
+  - first:
+      213: -4755520343073708585
+    second: LogoSheet_204
+  - first:
+      213: -1915960536007672397
+    second: LogoSheet_205
+  - first:
+      213: 466315672323622185
+    second: LogoSheet_206
+  - first:
+      213: -2983570877193999428
+    second: LogoSheet_207
+  - first:
+      213: 7391492078230454785
+    second: LogoSheet_208
+  - first:
+      213: -3239462984342389769
+    second: LogoSheet_209
+  - first:
+      213: 3497354045547277822
+    second: LogoSheet_210
+  - first:
+      213: -5939792544065598948
+    second: LogoSheet_211
+  - first:
+      213: 790583680157388122
+    second: LogoSheet_212
+  - first:
+      213: -4818324082135580806
+    second: LogoSheet_213
+  - first:
+      213: -3945711137851896958
+    second: LogoSheet_214
+  - first:
+      213: 2966575194789943278
+    second: LogoSheet_215
+  - first:
+      213: -6644354798277169252
+    second: LogoSheet_216
+  - first:
+      213: -9047935387559976647
+    second: LogoSheet_217
+  - first:
+      213: 6261785309002509238
+    second: LogoSheet_218
+  - first:
+      213: 4772240111515515033
+    second: LogoSheet_219
+  - first:
+      213: 5575801781737050255
+    second: LogoSheet_220
+  - first:
+      213: 6171903383843095688
+    second: LogoSheet_221
+  - first:
+      213: -5160189392305047657
+    second: LogoSheet_222
+  - first:
+      213: -2650689272505348360
+    second: LogoSheet_223
+  - first:
+      213: 1726684970448028968
+    second: LogoSheet_224
+  - first:
+      213: -2583164800432371946
+    second: LogoSheet_225
+  - first:
+      213: 406237812523902347
+    second: LogoSheet_226
+  - first:
+      213: 4119582355502835024
+    second: LogoSheet_227
+  - first:
+      213: -1449021591023697533
+    second: LogoSheet_228
+  - first:
+      213: 911016020864163711
+    second: LogoSheet_229
+  - first:
+      213: -6356879811786749724
+    second: LogoSheet_230
+  - first:
+      213: -4201356536045047589
+    second: LogoSheet_231
+  - first:
+      213: -6414189121058091190
+    second: LogoSheet_232
+  - first:
+      213: -6507688074291292554
+    second: LogoSheet_233
+  - first:
+      213: -5453247312224353454
+    second: LogoSheet_234
+  - first:
+      213: 2544132374138302422
+    second: LogoSheet_235
+  - first:
+      213: 6277316592285252657
+    second: LogoSheet_236
+  - first:
+      213: 2186696521935373097
+    second: LogoSheet_237
+  - first:
+      213: 767609064251358277
+    second: LogoSheet_238
+  - first:
+      213: -4094102816243396796
+    second: LogoSheet_239
+  - first:
+      213: -1898472795605172736
+    second: LogoSheet_240
+  - first:
+      213: -4641969532294889173
+    second: LogoSheet_241
+  - first:
+      213: -8675261326356634012
+    second: LogoSheet_242
+  - first:
+      213: 1270676536460452708
+    second: LogoSheet_243
+  - first:
+      213: -6890793671430871451
+    second: LogoSheet_244
+  - first:
+      213: -4221509297589734462
+    second: LogoSheet_245
+  - first:
+      213: -760300595943418115
+    second: LogoSheet_246
+  - first:
+      213: 2057065548494568312
+    second: LogoSheet_247
+  - first:
+      213: 60139456125549722
+    second: LogoSheet_248
+  - first:
+      213: -307780855361902745
+    second: LogoSheet_249
+  - first:
+      213: -6954048870431452749
+    second: LogoSheet_250
+  - first:
+      213: -1743345547196725830
+    second: LogoSheet_251
+  - first:
+      213: -7477580225512389850
+    second: LogoSheet_252
+  - first:
+      213: 1759813753957387656
+    second: LogoSheet_253
+  - first:
+      213: 4171606641091368758
+    second: LogoSheet_254
+  - first:
+      213: 4510350273805231969
+    second: LogoSheet_255
+  - first:
+      213: -6590840538203283373
+    second: LogoSheet_256
+  - first:
+      213: -8713169609058257685
+    second: LogoSheet_257
+  - first:
+      213: -8840416865778923823
+    second: LogoSheet_258
+  - first:
+      213: 534295829085708089
+    second: LogoSheet_259
+  - first:
+      213: 9169604173623417330
+    second: LogoSheet_260
+  - first:
+      213: -1898650308749940056
+    second: LogoSheet_261
+  - first:
+      213: -3604485815434295843
+    second: LogoSheet_262
+  - first:
+      213: 8283784590966714390
+    second: LogoSheet_263
+  - first:
+      213: -1842918046286347588
+    second: LogoSheet_264
+  - first:
+      213: 5355701317062992983
+    second: LogoSheet_265
+  - first:
+      213: -2432736464753319482
+    second: LogoSheet_266
+  - first:
+      213: 4167668666016092597
+    second: LogoSheet_267
+  - first:
+      213: -574967031912108567
+    second: LogoSheet_268
+  - first:
+      213: -6046462169338862158
+    second: LogoSheet_269
+  - first:
+      213: 8730549529867241892
+    second: LogoSheet_270
+  - first:
+      213: 6548469037270223063
+    second: LogoSheet_271
+  - first:
+      213: 8697813238681272111
+    second: LogoSheet_272
+  - first:
+      213: 579667367935774746
+    second: LogoSheet_273
+  - first:
+      213: -6579753234511230827
+    second: LogoSheet_274
+  - first:
+      213: -5293457044675381088
+    second: LogoSheet_275
+  - first:
+      213: -2758307257937958485
+    second: LogoSheet_276
+  - first:
+      213: -5054022486267362760
+    second: LogoSheet_277
+  - first:
+      213: 7057007448480279554
+    second: LogoSheet_278
+  - first:
+      213: -4419490150874836203
+    second: LogoSheet_279
+  - first:
+      213: 98761286500722257
+    second: LogoSheet_280
+  - first:
+      213: 7465463949008958351
+    second: LogoSheet_281
+  - first:
+      213: -3218837838105661091
+    second: LogoSheet_282
+  - first:
+      213: 4607991391244932363
+    second: LogoSheet_283
+  - first:
+      213: 6641259089886005619
+    second: LogoSheet_284
+  - first:
+      213: 2492055435744706447
+    second: LogoSheet_285
+  - first:
+      213: -2716559028365933094
+    second: LogoSheet_286
+  - first:
+      213: 6088847636597167605
+    second: LogoSheet_287
+  - first:
+      213: -4140457323339531211
+    second: LogoSheet_288
+  - first:
+      213: -8992971290019679884
+    second: LogoSheet_289
+  - first:
+      213: -584678433228787812
+    second: LogoSheet_290
+  - first:
+      213: 7687851456874220794
+    second: LogoSheet_291
+  - first:
+      213: 5826594832607063421
+    second: LogoSheet_292
+  - first:
+      213: -7056509353025263864
+    second: LogoSheet_293
+  - first:
+      213: 8671531898642061433
+    second: LogoSheet_294
+  - first:
+      213: -2033418746500740115
+    second: LogoSheet_295
+  - first:
+      213: -2340223128888154460
+    second: LogoSheet_296
+  - first:
+      213: 1488458693241934258
+    second: LogoSheet_297
+  - first:
+      213: 6392470225396458752
+    second: LogoSheet_298
+  - first:
+      213: 5112594661956702835
+    second: LogoSheet_299
+  - first:
+      213: -191991511311231626
+    second: LogoSheet_300
+  - first:
+      213: -8128236437389675437
+    second: LogoSheet_301
+  - first:
+      213: 1402501422170505478
+    second: LogoSheet_302
+  - first:
+      213: 7585277074423184061
+    second: LogoSheet_303
+  - first:
+      213: -8652405160275780438
+    second: LogoSheet_304
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LogoSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d8cda396f5f5510800000000000000
+      internalID: 1540054503147736401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de27a896fb04d9cb0800000000000000
+      internalID: -4855653632381914387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5f5dfb53fafc4c0800000000000000
+      internalID: -4264997676709972547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9b18e0547158de0800000000000000
+      internalID: -1331632529454548508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a360ddbf9c685d0800000000000000
+      internalID: -3060536813169526222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfa9e6d05c4b2020800000000000000
+      internalID: 2318030343298985911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d7f9fda407f4250800000000000000
+      internalID: 5931082701151894892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0aedd151975399c0800000000000000
+      internalID: -3921694568854197749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f7f0d927b1c4e90800000000000000
+      internalID: -7040221938411667639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2a53c6dd4449ab0800000000000000
+      internalID: -5002297568307862857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6adb870f6ab5c3a20800000000000000
+      internalID: 3043408220752756134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833ba0432fee98ca0800000000000000
+      internalID: -6014013103353973960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f098904189a2f6950800000000000000
+      internalID: 6444416424450033935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3061f4b06cd4e75a0800000000000000
+      internalID: -6521689697397303805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aea82d5a808afe80800000000000000
+      internalID: -8144055644389331288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd82ef6d274768220800000000000000
+      internalID: 2487803880750852316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc292351bcbeed00800000000000000
+      internalID: 1003947236740639931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3f3c2c0c6385270800000000000000
+      internalID: 8239395719803564999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_18
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce338e54b9404b10800000000000000
+      internalID: 1963650476562136780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4aae48ba41cbd00800000000000000
+      internalID: 989688745016599760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_20
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571659cb7b2e106b0800000000000000
+      internalID: -5331731205059157643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e889375df25a5a0800000000000000
+      internalID: -6510745092480266662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260e67f1d3a23c640800000000000000
+      internalID: 5098965645122789474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b025a7addfdc30640800000000000000
+      internalID: 5045102497760956939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8839a5f4c41487c0800000000000000
+      internalID: -4070105327068432242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6fa6b1e796f36d0800000000000000
+      internalID: -3008570035713411348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_26
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24d0ffaa94515a30800000000000000
+      internalID: 4202232950666875947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_27
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969692c14d673be20800000000000000
+      internalID: 3365163999953512809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a83ebb3aba66352e0800000000000000
+      internalID: -2138252510698413174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2c2f3af65a5a0c0800000000000000
+      internalID: -4565060748359580934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_30
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f7c54e883ec2bd0800000000000000
+      internalID: -2653495903341740205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f66623c191d6aa70800000000000000
+      internalID: 8837981742735714039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d9fb929b68a4710800000000000000
+      internalID: 1678301940976426387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_33
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b338feeb9912975b0800000000000000
+      internalID: -5370224136445525189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_34
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a3713888dec0b30800000000000000
+      internalID: 4255036918528948857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4e1380e813db000800000000000000
+      internalID: 53253256690918615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d559fa7f6d3d6b0800000000000000
+      internalID: -5272634379429651159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ebe113ae8d89e90800000000000000
+      internalID: -7018621518898872713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_38
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46fa2abd609ace4b0800000000000000
+      internalID: -5409763205459038364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f696437cdc4fbf80800000000000000
+      internalID: -8088661896023599374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_40
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de81999b78cb7b540800000000000000
+      internalID: 5023691200475502829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSheet_41
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218af2e90645ad390800000000000000
+      internalID: -7792823431263705070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b8e96564fa90f2a4bac713cd92eedbdc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LogoSheet_0: 1540054503147736401
+      LogoSheet_1: -4855653632381914387
+      LogoSheet_10: 3043408220752756134
+      LogoSheet_11: -6014013103353973960
+      LogoSheet_12: 6444416424450033935
+      LogoSheet_13: -6521689697397303805
+      LogoSheet_14: -8144055644389331288
+      LogoSheet_15: 2487803880750852316
+      LogoSheet_16: 1003947236740639931
+      LogoSheet_17: 8239395719803564999
+      LogoSheet_18: 1963650476562136780
+      LogoSheet_19: 989688745016599760
+      LogoSheet_2: -4264997676709972547
+      LogoSheet_20: -5331731205059157643
+      LogoSheet_21: -6510745092480266662
+      LogoSheet_22: 5098965645122789474
+      LogoSheet_23: 5045102497760956939
+      LogoSheet_24: -4070105327068432242
+      LogoSheet_25: -3008570035713411348
+      LogoSheet_26: 4202232950666875947
+      LogoSheet_27: 3365163999953512809
+      LogoSheet_28: -2138252510698413174
+      LogoSheet_29: -4565060748359580934
+      LogoSheet_3: -1331632529454548508
+      LogoSheet_30: -2653495903341740205
+      LogoSheet_31: 8837981742735714039
+      LogoSheet_32: 1678301940976426387
+      LogoSheet_33: -5370224136445525189
+      LogoSheet_34: 4255036918528948857
+      LogoSheet_35: 53253256690918615
+      LogoSheet_36: -5272634379429651159
+      LogoSheet_37: -7018621518898872713
+      LogoSheet_38: -5409763205459038364
+      LogoSheet_39: -8088661896023599374
+      LogoSheet_4: -3060536813169526222
+      LogoSheet_40: 5023691200475502829
+      LogoSheet_41: -7792823431263705070
+      LogoSheet_5: 2318030343298985911
+      LogoSheet_6: 5931082701151894892
+      LogoSheet_7: -3921694568854197749
+      LogoSheet_8: -7040221938411667639
+      LogoSheet_9: -5002297568307862857
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

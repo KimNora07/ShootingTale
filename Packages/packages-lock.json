@@ -1,13 +1,5 @@
 {
   "dependencies": {
-    "com.tnd.upscaling": {
-      "version": "file:com.tnd.upscaling",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "3.2.1"
-      }
-    },
     "com.unity.2d.animation": {
       "version": "10.2.1",
       "depth": 1,
@@ -190,13 +182,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "3.2.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.postprocessing": {
       "version": "3.5.1",
       "depth": 0,
@@ -305,6 +290,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.unity.unityutility": {
+      "version": "https://github.com/KimNora07/UnityUtility.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d34e9808390c7311f01cec4bf3ed3b20f0e87ddb"
     },
     "com.unity.visualscripting": {
       "version": "1.9.7",
