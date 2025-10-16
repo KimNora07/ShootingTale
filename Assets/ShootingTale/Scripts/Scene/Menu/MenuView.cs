@@ -108,15 +108,15 @@ namespace Scene.Menu
             }, () => { onComplete[0]?.Invoke(); });
         }
 
-        public void PlayMoveSound()
-        {
-            AudioManager.Instance.PlaySfx(AudioManager.Instance.buttonMove);
-        }
+        // public void PlayMoveSound()
+        // {
+        //     AudioManager.Instance.PlaySfx(AudioManager.Instance.buttonMove);
+        // }
 
-        public void PlayClickSound()
-        {
-            AudioManager.Instance.PlaySfx(AudioManager.Instance.buttonClick);
-        }
+        // public void PlayClickSound()
+        // {
+        //     AudioManager.Instance.PlaySfx(AudioManager.Instance.buttonClick);
+        // }
 
         public void ChangeTo(RectTransform fromTarget, RectTransform toTarget, Vector2 fromTargetPosition,
             Vector2 toTargetPosition, Action onTransitionComplete, Action onComplete)

@@ -17,8 +17,8 @@ namespace Scene.Menu
         void UpdateDescriptionText(string text);
         void LeftMoveButton(Vector3 position, Action onPlay, Action[] onComplete);
         void RightMoveButton(Vector3 position, Action onPlay, Action[] onComplete);
-        void PlayMoveSound();
-        void PlayClickSound();
+        // void PlayMoveSound();
+        // void PlayClickSound();
 
         void ChangeTo(RectTransform fromTarget, RectTransform toTarget, Vector2 fromTargetPosition,
             Vector2 toTargetPosition, Action onTransitionComplete, Action onComplete);

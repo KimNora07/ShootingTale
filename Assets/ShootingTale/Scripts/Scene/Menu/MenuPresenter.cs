@@ -37,7 +37,7 @@ namespace Scene.Menu
                     _view.GetPoints()[(int)_model.CurrentMenuType].points[_position].localPosition, () =>
                     {
                         isMoving = true;
-                        _view.PlayMoveSound();
+                        //_view.PlayMoveSound();
                     }, new[]
                     {
                         (Action)(() => { isMoving = false; }),
@@ -62,7 +62,7 @@ namespace Scene.Menu
                     _view.GetPoints()[(int)_model.CurrentMenuType].points[_position].localPosition, () =>
                     {
                         isMoving = true;
-                        _view.PlayMoveSound();
+                        //_view.PlayMoveSound();
                     }, new[]
                     {
                         (Action)(() => { isMoving = false; }),
@@ -75,7 +75,7 @@ namespace Scene.Menu
         {
             if (_model.CurrentMenuState.IsAllLocked()) return;
 
-            _view.PlayClickSound();
+            //_view.PlayClickSound();
             MenuCommand selected = _model.GetCurrentMenuItems()[_position];
             
             _executor.Execute(selected);
