@@ -1,10 +1,7 @@
 //System
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
-//UnityEngine
-using Scene.Menu;
 
 public class AudioController : MonoBehaviour
 {

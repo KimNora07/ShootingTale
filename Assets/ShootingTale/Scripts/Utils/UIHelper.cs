@@ -1,5 +1,4 @@
 using UnityEngine;
-using Scene.Menu;
 
 public static class UIHelper
 {
